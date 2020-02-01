@@ -15,10 +15,11 @@ public enum PlayerAction {
 
 public enum PlayerType {
   MAIN,
-  INSTRUMENT_ONE,
-  INSTRUMENT_TWO,
-  INSTRUMENT_THREE,
-  INSTRUMENT_FOUR,
+  PIANO,
+  DRUM,
+  BASS,
+  TRUMPET,
+  UNKNOWN,
 }
 
 public interface IHostController {
@@ -62,16 +63,18 @@ public class AirConsoleHandler : MonoBehaviour, IHostController
       Debug.Log($"Sending player {toDeviceId} to type {type}");
       
       var message = new {
-        player = type,
+        message_type = "PLAYER_TYPE",
+        player_type = type.ToString(),
       };
 
-      AirConsole.instance.Message(toDeviceId, "message");
+      AirConsole.instance.Message(toDeviceId, message);
     }
     
     public void sendHitFeedback(int toDeviceId, bool isSuccessful) {
       Debug.Log($"Sending Player {toDeviceId} success: {isSuccessful}");
       
       var message = new {
+        message_type = "HIT_FEEDBACK",
         hit = isSuccessful,
       };
       
@@ -118,6 +121,7 @@ public class AirConsoleHandler : MonoBehaviour, IHostController
             //you're the new rainbow dash
             primaryDeviceID = deviceID;
             Debug.Log($"Device [{primaryDeviceID}] is the new primary");
+            sendPlayerType(deviceID, PlayerType.MAIN);
             return;
 
         }
@@ -130,34 +134,39 @@ public class AirConsoleHandler : MonoBehaviour, IHostController
         GameObject newPlayer = Instantiate(acInstrumentPlayerPrefab) as GameObject;
         players.Add(deviceID, newPlayer.GetComponent<ACInstrumentPlayer>());
         players[deviceID].deviceTracker = deviceID;
-        chooseInstrumentForPlayer(newPlayer.GetComponent<ACInstrumentPlayer>());
+        PlayerType playerType = chooseInstrumentForPlayer(newPlayer.GetComponent<ACInstrumentPlayer>());
+        sendPlayerType(deviceID, playerType);
         Debug.Log($"Device [{deviceID}] has been added as an instrument player");
     }
 
-    private void chooseInstrumentForPlayer(ACInstrumentPlayer player)  {
+    private PlayerType chooseInstrumentForPlayer(ACInstrumentPlayer player)  {
         if (pianoHandler.numberofActivePlayers == 0)
         {
             player.insRhythmHandler = pianoHandler;
             pianoHandler.numberofActivePlayers++;
             pianoHandler.numberOfPlayers.text = "Players: " + pianoHandler.numberofActivePlayers.ToString();
             Debug.Log("Added a pianist");
+            return PlayerType.PIANO;
         } else if (drumHandler.numberofActivePlayers == 0)
         {
             player.insRhythmHandler = drumHandler;
             drumHandler.numberofActivePlayers++;
             drumHandler.numberOfPlayers.text = "Players: " + drumHandler.numberofActivePlayers.ToString();
             Debug.Log("Added a drummer");
+            return PlayerType.DRUM;
         } else if (bassHandler.numberofActivePlayers == 0)
         {
             player.insRhythmHandler = bassHandler;
             bassHandler.numberofActivePlayers++;
             bassHandler.numberOfPlayers.text = "Players: " + bassHandler.numberofActivePlayers.ToString();
             Debug.Log("Added a bassist");
+            return PlayerType.BASS;
         } else if (trumpetHandler.numberofActivePlayers == 0) {
             player.insRhythmHandler = trumpetHandler;
             trumpetHandler.numberofActivePlayers++;
             trumpetHandler.numberOfPlayers.text = "Players: " + trumpetHandler.numberofActivePlayers.ToString();
             Debug.Log("Added a trumpeter");
+            return PlayerType.TRUMPET;
         } else
         {
             InstrumentRhythmHandler chosenhandler = allHandlers[Random.Range(0, 3)];
@@ -167,8 +176,7 @@ public class AirConsoleHandler : MonoBehaviour, IHostController
             Debug.Log("Added a player to a random handler");
 
         }
-        
-
+        return PlayerType.UNKNOWN;
     }
 
     void OnConnect(int device)

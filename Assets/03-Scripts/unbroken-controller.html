@@ -10,6 +10,10 @@
     height: 100%;
     position: absolute;
   }
+  
+  #instrument {
+    color: white;
+  }
 
   .button{
     background: #3B3B3B;
@@ -83,6 +87,11 @@
 
       me.airconsole.onMessage = function(from, data) {
         console.log("onMessage", from, data);
+        var messageType = data.message_type;
+        if (data.message_type == "PLAYER_TYPE") {
+          var playerTypeText = document.getElementById("playerTypeText");
+          playerTypeText.textContent = data.player_type;
+        }
       };
 
       /*
@@ -123,5 +132,6 @@
   <div class="button" id="right-button" ontouchstart="window.app.sendMessageToScreen('right')" ontouchend="window.app.sendMessageToScreen('right-up')"><span class="button-text">RIGHT</span></div>
   <div class="button" id="up-button" ontouchstart="window.app.sendMessageToScreen('up')" ontouchend="window.app.sendMessageToScreen('up-up')"><span class="button-text">UP</span></div>
   <div class="button" id="down-button" ontouchstart="window.app.sendMessageToScreen('down')" ontouchend="window.app.sendMessageToScreen('down-up')"><span class="button-text">DOWN</span></div>
+  <div id="instrument"><span id="playerTypeText"></span></div>
 </body>
 </html>

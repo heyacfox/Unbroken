@@ -238,9 +238,12 @@ MonoBehaviour:
   playerHealth: 0
   monsterHealthMax: 2
   monsterHealth: 0
+  EnemyHealthSlider: {fileID: 0}
+  PlayerHealthSlider: {fileID: 0}
   numberOfBuffs: 0
   numberOfDebuffs: 0
   rhythmManager: {fileID: 978624336}
+  questManager: {fileID: 0}
 --- !u!4 &345431970
 Transform:
   m_ObjectHideFlags: 0
@@ -806,7 +809,7 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 0
+  orthographic: 1
   orthographic size: 5
   m_Depth: -1
   m_CullingMask:
@@ -1054,6 +1057,13 @@ MonoBehaviour:
   beatRight: {fileID: 21300000, guid: 658e3cbaebcabe54fa3484bc714c9df5, type: 3}
   beatPrefab: {fileID: 2315993686209039954, guid: 34e0122a6a3c84342a0f5d2d2e1e9f7e,
     type: 3}
+  perfectIndicatorPrefab: {fileID: 0}
+  goodIndicatorPrefab: {fileID: 0}
+  missIndicatorPrefab: {fileID: 0}
+  pianoRhythmHandler: {fileID: 0}
+  drumsRhythmHandler: {fileID: 0}
+  bassRhythmHandler: {fileID: 0}
+  trumpetRhythmHandler: {fileID: 0}
 --- !u!4 &978624337
 Transform:
   m_ObjectHideFlags: 0
@@ -1296,6 +1306,129 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1117575024
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 192608195, guid: ecc1644056e26e14db27379b620847a7, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 192608195, guid: ecc1644056e26e14db27379b620847a7, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 192608195, guid: ecc1644056e26e14db27379b620847a7, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 214333785, guid: ecc1644056e26e14db27379b620847a7, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 214333785, guid: ecc1644056e26e14db27379b620847a7, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 214333785, guid: ecc1644056e26e14db27379b620847a7, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2176673396499104942, guid: ecc1644056e26e14db27379b620847a7,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2176673396499104942, guid: ecc1644056e26e14db27379b620847a7,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2176673396499104942, guid: ecc1644056e26e14db27379b620847a7,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3272076057285440450, guid: ecc1644056e26e14db27379b620847a7,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3272076057285440450, guid: ecc1644056e26e14db27379b620847a7,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3272076057285440450, guid: ecc1644056e26e14db27379b620847a7,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3457644965591989744, guid: ecc1644056e26e14db27379b620847a7,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3457644965591989744, guid: ecc1644056e26e14db27379b620847a7,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3457644965591989744, guid: ecc1644056e26e14db27379b620847a7,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3457644965591989744, guid: ecc1644056e26e14db27379b620847a7,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3457644965591989744, guid: ecc1644056e26e14db27379b620847a7,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3457644965591989744, guid: ecc1644056e26e14db27379b620847a7,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3457644965591989744, guid: ecc1644056e26e14db27379b620847a7,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3457644965591989744, guid: ecc1644056e26e14db27379b620847a7,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 3457644965591989744, guid: ecc1644056e26e14db27379b620847a7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3457644965591989744, guid: ecc1644056e26e14db27379b620847a7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3457644965591989744, guid: ecc1644056e26e14db27379b620847a7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3457644965591989745, guid: ecc1644056e26e14db27379b620847a7,
+        type: 3}
+      propertyPath: m_Name
+      value: FullSceneSetup
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ecc1644056e26e14db27379b620847a7, type: 3}
 --- !u!1 &1155514889
 GameObject:
   m_ObjectHideFlags: 0
@@ -1329,6 +1462,10 @@ MonoBehaviour:
   primaryDeviceID: -1
   acInstrumentPlayerPrefab: {fileID: 956335357656454285, guid: 04a5ddf899f3a8645bb560e1251fe81d,
     type: 3}
+  pianoHandler: {fileID: 0}
+  drumHandler: {fileID: 0}
+  bassHandler: {fileID: 0}
+  trumpetHandler: {fileID: 0}
 --- !u!4 &1155514891
 Transform:
   m_ObjectHideFlags: 0
