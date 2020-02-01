@@ -66,7 +66,7 @@ public class QuestManager : MonoBehaviour
         trumpetHandler.startGenerationCoroutine();
         enemySpawnPosition.sprite = character.enemySprite;
         rpgManager.EnemyHealthSlider.maxValue = character.enemyHPMax;
-
+        
 
     }
 
