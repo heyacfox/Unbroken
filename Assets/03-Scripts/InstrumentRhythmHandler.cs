@@ -19,6 +19,7 @@ public class InstrumentRhythmHandler : MonoBehaviour
     public Transform rightStart;
 
     public Transform rhythmTarget;
+    public float rhythmBeatsSpeed;
 
     public GameObject beatPrefab;
 
@@ -32,6 +33,7 @@ public class InstrumentRhythmHandler : MonoBehaviour
     private void Start()
     {
         instrumentRhythmBeats = new List<RhythmBeat>();
+        StartCoroutine(generateBeatsInTime());
     }
 
     IEnumerator generateBeatsInTime()
@@ -108,16 +110,19 @@ public class InstrumentRhythmHandler : MonoBehaviour
         else if (inputType != rhythmBeatToCheck.inputType)
         {
             Debug.Log("Miss! Wrong Input!");
+            registerTargetMiss();
             acInstrumentPlayer.gotMiss();
         }
         else if (distanceToTarget > nearnessCheckForPerfect)
         {
             Debug.Log("Good!");
+            registerTargetGood();
             acInstrumentPlayer.gotGood();
         }
         else
         {
             Debug.Log("Perfect!");
+            registerTargetPerfect();
             acInstrumentPlayer.gotPerfect();
         }
 
@@ -125,26 +130,23 @@ public class InstrumentRhythmHandler : MonoBehaviour
 
     }
 
-    private void Update()
+    public void registerTargetMiss()
     {
-
+        rpgManager.addDebuffStack();
+        
     }
 
-    public void registerTargetMiss(RhythmBeat rhythmBeat)
+    private void registerTargetGood()
     {
-        rpgManager.playerMissOccurred();
+        rpgManager.addBuffStack();
+        //destroyBeat(rhythmBeat);
     }
 
-    private void registerTargetGood(RhythmBeat rhythmBeat)
+    private void registerTargetPerfect()
     {
-        rpgManager.playerHitOccurred(0);
-        destroyBeat(rhythmBeat);
-    }
-
-    private void registerTargetPerfect(RhythmBeat rhythmBeat)
-    {
-        rpgManager.playerHitOccurred(1);
-        destroyBeat(rhythmBeat);
+        rpgManager.addBuffStack();
+        rpgManager.addBuffStack();
+        //destroyBeat(rhythmBeat);
     }
 
     public void destroyBeat(RhythmBeat rhythmBeat)
@@ -155,36 +157,42 @@ public class InstrumentRhythmHandler : MonoBehaviour
 
     public void generateBeat()
     {
+        Debug.Log("Made a ins beat");
         InputType chosenInput = (InputType)Random.Range(0, 4);
-        switch(chosenInput)
-        {
-            case InputType.down:
-                break;
-
-
-        }/*
-        GameObject beatObject = Instantiate(beatPrefab, rhythmSpawnLocation);
-        RhythmBeat rhythmBeat = beatObject.GetComponent<RhythmBeat>();
-        Sprite spriteToUse = beatUp;
+        GameObject beatObject = new GameObject() ;
+        Sprite spriteToUse = upSprite;
         switch (chosenInput)
         {
-            case InputType.up:
-                spriteToUse = beatUp;
-                break;
             case InputType.down:
-                spriteToUse = beatDown;
+                beatObject = Instantiate(beatPrefab, downStart);
+                spriteToUse = downSprite;
+                beatObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, rhythmBeatsSpeed);
+                break;
+            case InputType.up:
+                beatObject = Instantiate(beatPrefab, upStart);
+                spriteToUse = upSprite;
+                beatObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, -rhythmBeatsSpeed);
                 break;
             case InputType.left:
-                spriteToUse = beatLeft;
+                beatObject = Instantiate(beatPrefab, leftStart);
+                spriteToUse = leftSprite;
+                beatObject.GetComponent<Rigidbody2D>().velocity = new Vector2(rhythmBeatsSpeed, 0f);
                 break;
             case InputType.right:
-                spriteToUse = beatRight;
+                beatObject = Instantiate(beatPrefab, rightStart);
+                spriteToUse = rightSprite;
+                beatObject.GetComponent<Rigidbody2D>().velocity = new Vector2(-rhythmBeatsSpeed, 0f);
                 break;
-        }
 
-        rhythmBeat.setupBeat(spriteToUse, rhythmBeatsSpeed, chosenInput, this);
-        generatedP1Beats.Add(rhythmBeat);
-        */
+
+        }
+        RhythmBeat rhythmBeat = beatObject.GetComponent<RhythmBeat>();
+        
+       
+
+        rhythmBeat.setupBeatIns(spriteToUse, rhythmBeatsSpeed, chosenInput, this);
+        instrumentRhythmBeats.Add(rhythmBeat);
+        
 
     }
 
