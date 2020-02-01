@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InstrumentRhythmHandler : MonoBehaviour
 {
@@ -30,11 +31,14 @@ public class InstrumentRhythmHandler : MonoBehaviour
     public float nearnessCheckForGood = 1f;
     public float nearnessCheckForPerfect = 0.5f;
 
+    public int battleBuffAccumulated;
+    public Text buffText;
+
 
     private void Start()
     {
         instrumentRhythmBeats = new List<RhythmBeat>();
-        StartCoroutine(generateBeatsInTime());
+        //StartCoroutine(generateBeatsInTime());
     }
 
     IEnumerator generateBeatsInTime()
@@ -44,6 +48,11 @@ public class InstrumentRhythmHandler : MonoBehaviour
             yield return new WaitForSeconds(generateBeatEveryXSeconds);
             generateBeat();
         }
+    }
+
+    public void startGenerationCoroutine()
+    {
+        StartCoroutine(generateBeatsInTime());
     }
 
     public void gameWon()
@@ -134,12 +143,17 @@ public class InstrumentRhythmHandler : MonoBehaviour
     public void registerTargetMiss()
     {
         rpgManager.addDebuffStack();
-        
+        battleBuffAccumulated--;
+        updateBuffText();
+
+
     }
 
     private void registerTargetGood()
     {
         rpgManager.addBuffStack();
+        battleBuffAccumulated++;
+        updateBuffText();
         //destroyBeat(rhythmBeat);
     }
 
@@ -147,7 +161,27 @@ public class InstrumentRhythmHandler : MonoBehaviour
     {
         rpgManager.addBuffStack();
         rpgManager.addBuffStack();
+        battleBuffAccumulated++;
+        battleBuffAccumulated++;
+        updateBuffText();
         //destroyBeat(rhythmBeat);
+    }
+
+    private void updateBuffText()
+    {
+        if (battleBuffAccumulated > 0)
+        {
+            buffText.color = new Color(0f, 1f, 0f);
+            buffText.text = "+" + battleBuffAccumulated;
+        } else if (battleBuffAccumulated < 0)
+        {
+            buffText.color = new Color(1f, 0f, 0f);
+            buffText.text = "-" + battleBuffAccumulated;
+        } else
+        {
+            buffText.color = new Color(1f, 1f, 1f);
+            buffText.text = "0";
+        }
     }
 
     public void destroyBeat(RhythmBeat rhythmBeat)

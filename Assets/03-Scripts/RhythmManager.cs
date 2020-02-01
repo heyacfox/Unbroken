@@ -25,11 +25,14 @@ public class RhythmManager : MonoBehaviour
     public Sprite beatRight;
 
     public GameObject beatPrefab;
+    public GameObject perfectIndicatorPrefab;
+    public GameObject goodIndicatorPrefab;
+    public GameObject missIndicatorPrefab;
  
 
     public void Start()
     {
-        StartCoroutine(generateBeatsInTime());
+        //StartCoroutine(generateBeatsInTime());
     }
 
     IEnumerator generateBeatsInTime()
@@ -39,6 +42,11 @@ public class RhythmManager : MonoBehaviour
             yield return new WaitForSeconds(generateBeatEveryXSeconds);
             generateBeat();
         }
+    }
+
+    public void startGenerationCoroutine()
+    {
+        StartCoroutine(generateBeatsInTime());
     }
 
     public void gameWon()
@@ -88,6 +96,7 @@ public class RhythmManager : MonoBehaviour
         {
             Debug.Log("Miss!");
             registerTargetMiss(rhythmBeatToCheck);
+            
         }
         else if (inputType != rhythmBeatToCheck.inputType)
         {
@@ -141,18 +150,21 @@ public class RhythmManager : MonoBehaviour
     public void registerTargetMiss(RhythmBeat rhythmBeat)
     {
         rpgManager.playerMissOccurred();
+        Instantiate(missIndicatorPrefab, rhythmTarget);
     }
 
     private void registerTargetGood(RhythmBeat rhythmBeat)
     {
         rpgManager.playerHitOccurred(0);
         destroyBeat(rhythmBeat);
+        Instantiate(goodIndicatorPrefab, rhythmTarget);
     }
 
     private void registerTargetPerfect(RhythmBeat rhythmBeat)
     {
         rpgManager.playerHitOccurred(1);
         destroyBeat(rhythmBeat);
+        Instantiate(perfectIndicatorPrefab, rhythmTarget);
     }
 
     public void destroyBeat(RhythmBeat rhythmBeat)
