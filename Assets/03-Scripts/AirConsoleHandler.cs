@@ -4,7 +4,29 @@ using UnityEngine;
 using NDream.AirConsole;
 using Newtonsoft.Json.Linq;
 
-public class AirConsoleHandler : MonoBehaviour
+public enum PlayerAction {
+  LEFT,
+  RIGHT,
+  UP,
+  DOWN,
+  SELECT,
+}
+
+public enum PlayerType {
+  MAIN,
+  INSTRUMENT_ONE,
+  INSTRUMENT_TWO,
+  INSTRUMENT_THREE,
+  INSTRUMENT_FOUR,
+}
+
+public interface IHostController {
+  void onAction(int fromDeviceId, PlayerAction action);
+  void sendPlayerType(int toDeviceId, PlayerType type);
+  void sendHitFeedback(int toDeviceId, bool isSuccessful);
+}
+
+public class AirConsoleHandler : MonoBehaviour, IHostController
 {
 
     public Dictionary<int, ACInstrumentPlayer> players = new Dictionary<int, ACInstrumentPlayer>();
@@ -28,6 +50,31 @@ public class AirConsoleHandler : MonoBehaviour
         allHandlers.Add(drumHandler);
         allHandlers.Add(bassHandler);
         allHandlers.Add(trumpetHandler);
+    }
+    
+    public void onAction(int fromDeviceId, PlayerAction action) {
+      Debug.Log($"Player {fromDeviceId} did action: {action}");
+      // Add actions here
+    }
+    
+    public void sendPlayerType(int toDeviceId, PlayerType type) {
+      Debug.Log($"Sending player {toDeviceId} to type {type}");
+      
+      var message = new {
+        player = type,
+      };
+
+      AirConsole.instance.Message(toDeviceId, "message");
+    }
+    
+    public void sendHitFeedback(int toDeviceId, bool isSuccessful) {
+      Debug.Log($"Sending Player {toDeviceId} success: {isSuccessful}");
+      
+      var message = new {
+        hit = isSuccessful,
+      };
+      
+      AirConsole.instance.Message(toDeviceId, message);
     }
 
     void OnReady(string code)
