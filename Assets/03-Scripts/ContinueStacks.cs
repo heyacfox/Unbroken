@@ -13,7 +13,10 @@ public class ContinueStacks : MonoBehaviour
         if (instance == null)
         {
             instance = this;
+        } else
+        {
+            Destroy(this.gameObject);
         }
         DontDestroyOnLoad(this.gameObject);
-    }
+    }   
 }
