@@ -11,7 +11,7 @@
     position: absolute;
   }
   
-  #instrument {
+  #info {
     color: white;
   }
 
@@ -92,6 +92,12 @@
           var playerTypeText = document.getElementById("playerTypeText");
           playerTypeText.textContent = data.player_type;
         }
+        
+        if (data.message_type == "HIT_FEEDBACK") {
+          var hitText = document.getElementById("hitText");
+          hitText.textContent = data.hit_rating;
+          setTimeout(function() { hitText.textContent = ""; }, 500)
+        }
       };
 
       /*
@@ -132,6 +138,10 @@
   <div class="button" id="right-button" ontouchstart="window.app.sendMessageToScreen('right')" ontouchend="window.app.sendMessageToScreen('right-up')"><span class="button-text">RIGHT</span></div>
   <div class="button" id="up-button" ontouchstart="window.app.sendMessageToScreen('up')" ontouchend="window.app.sendMessageToScreen('up-up')"><span class="button-text">UP</span></div>
   <div class="button" id="down-button" ontouchstart="window.app.sendMessageToScreen('down')" ontouchend="window.app.sendMessageToScreen('down-up')"><span class="button-text">DOWN</span></div>
-  <div id="instrument"><span id="playerTypeText"></span></div>
+  <div id="info">
+    <span id="playerTypeText"></span>
+    <br>
+    <span id="hitText"></span>
+  </div>
 </body>
 </html>

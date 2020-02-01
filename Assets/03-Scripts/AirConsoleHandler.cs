@@ -22,13 +22,7 @@ public enum PlayerType {
   UNKNOWN,
 }
 
-public interface IHostController {
-  void onAction(int fromDeviceId, PlayerAction action);
-  void sendPlayerType(int toDeviceId, PlayerType type);
-  void sendHitFeedback(int toDeviceId, bool isSuccessful);
-}
-
-public class AirConsoleHandler : MonoBehaviour, IHostController
+public class AirConsoleHandler : MonoBehaviour
 {
 
     public Dictionary<int, ACInstrumentPlayer> players = new Dictionary<int, ACInstrumentPlayer>();
@@ -67,17 +61,6 @@ public class AirConsoleHandler : MonoBehaviour, IHostController
         player_type = type.ToString(),
       };
 
-      AirConsole.instance.Message(toDeviceId, message);
-    }
-    
-    public void sendHitFeedback(int toDeviceId, bool isSuccessful) {
-      Debug.Log($"Sending Player {toDeviceId} success: {isSuccessful}");
-      
-      var message = new {
-        message_type = "HIT_FEEDBACK",
-        hit = isSuccessful,
-      };
-      
       AirConsole.instance.Message(toDeviceId, message);
     }
 
