@@ -11,4 +11,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/04-Scenes/Lore.unity
     guid: 309dfc3676705394aa43b208a94ea12b
+  - enabled: 1
+    path: Assets/04-Scenes/MainBattleScene.unity
+    guid: ba27a30362233af46b2b6759a73ccf38
+  - enabled: 1
+    path: Assets/04-Scenes/Continue-Retire.unity
+    guid: 65acb981b8ea29647a20b539808d39e2
+  - enabled: 1
+    path: Assets/04-Scenes/Credits.unity
+    guid: dc96fe67244471b4dabf7d34be67958a
   m_configObjects: {}

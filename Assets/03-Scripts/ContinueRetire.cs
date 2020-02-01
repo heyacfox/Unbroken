@@ -5,9 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class ContinueRetire : MonoBehaviour
 {
-    public string con = "Continue";
+    public string con = "MainBattle";
 
-    public string retire = "Retire";
+    public string retire = "Credits";
     // Start is called before the first frame update
     void Start()
     {

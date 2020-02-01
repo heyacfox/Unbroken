@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class Lore : MonoBehaviour
 {
-    public string game = "Game";
+    public string game = "MainBattle";
 
     // Start is called before the first frame update
     void Start()
