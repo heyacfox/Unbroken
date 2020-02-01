@@ -11,6 +11,11 @@ public class AirConsoleHandler : MonoBehaviour
     public MainPlayer mainPlayer;
     public int primaryDeviceID = -1;
     public GameObject acInstrumentPlayerPrefab;
+    public InstrumentRhythmHandler pianoHandler;
+    public InstrumentRhythmHandler drumHandler;
+    public InstrumentRhythmHandler bassHandler;
+    public InstrumentRhythmHandler trumpetHandler;
+    private List<InstrumentRhythmHandler> allHandlers;
 
     void Awake()
     {
@@ -18,6 +23,11 @@ public class AirConsoleHandler : MonoBehaviour
         AirConsole.instance.onReady += OnReady;
         AirConsole.instance.onConnect += OnConnect;
         AirConsole.instance.onDisconnect += OnDisconnect;
+        allHandlers = new List<InstrumentRhythmHandler>();
+        allHandlers.Add(pianoHandler);
+        allHandlers.Add(drumHandler);
+        allHandlers.Add(bassHandler);
+        allHandlers.Add(trumpetHandler);
     }
 
     void OnReady(string code)
@@ -72,7 +82,40 @@ public class AirConsoleHandler : MonoBehaviour
         GameObject newPlayer = Instantiate(acInstrumentPlayerPrefab) as GameObject;
         players.Add(deviceID, newPlayer.GetComponent<ACInstrumentPlayer>());
         players[deviceID].deviceTracker = deviceID;
+        chooseInstrumentForPlayer(newPlayer.GetComponent<ACInstrumentPlayer>());
         Debug.Log($"Device [{deviceID}] has been added as an instrument player");
+    }
+
+    private void chooseInstrumentForPlayer(ACInstrumentPlayer player)  {
+        if (pianoHandler.numberofActivePlayers == 0)
+        {
+            player.insRhythmHandler = pianoHandler;
+            pianoHandler.numberofActivePlayers++;
+            Debug.Log("Added a pianist");
+        } else if (drumHandler.numberofActivePlayers == 0)
+        {
+            player.insRhythmHandler = drumHandler;
+            drumHandler.numberofActivePlayers++;
+            Debug.Log("Added a drummer");
+        } else if (bassHandler.numberofActivePlayers == 0)
+        {
+            player.insRhythmHandler = bassHandler;
+            bassHandler.numberofActivePlayers++;
+            Debug.Log("Added a bassist");
+        } else if (trumpetHandler.numberofActivePlayers == 0) {
+            player.insRhythmHandler = trumpetHandler;
+            trumpetHandler.numberofActivePlayers++;
+            Debug.Log("Added a trumpeter");
+        } else
+        {
+            InstrumentRhythmHandler chosenhandler = allHandlers[Random.Range(0, 3)];
+            player.insRhythmHandler = chosenhandler;
+            chosenhandler.numberofActivePlayers++;
+            Debug.Log("Added a player to a random handler");
+
+        }
+        
+
     }
 
     void OnConnect(int device)

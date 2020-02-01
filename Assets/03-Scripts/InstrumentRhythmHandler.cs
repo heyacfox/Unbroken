@@ -5,6 +5,7 @@ using UnityEngine;
 public class InstrumentRhythmHandler : MonoBehaviour
 {
     public List<RhythmBeat> instrumentRhythmBeats;
+    public int numberofActivePlayers = 0;
 
     public Sprite upSprite;
     public Sprite downSprite;

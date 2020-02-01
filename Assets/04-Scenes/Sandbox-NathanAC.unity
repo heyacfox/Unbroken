@@ -188,7 +188,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e37d83ebce05ad74683fd3228dde9e7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  browserStartMode: 4
+  browserStartMode: 0
   controllerHtml: {fileID: 4900000, guid: d5f1c0e2ce348ec468418dba4c454c9c, type: 3}
   autoScaleCanvas: 1
 --- !u!4 &245589325
@@ -445,6 +445,18 @@ Transform:
   m_Father: {fileID: 7741185}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &409078953 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2819875029809031943, guid: 9cc0a5878dd151c43a44411c676a09e7,
+    type: 3}
+  m_PrefabInstance: {fileID: 607251271}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 616aee7935dffb246b191d4b151b0ee0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &482064066
 GameObject:
   m_ObjectHideFlags: 0
@@ -906,6 +918,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 2.867, y: 0, z: 0}
+--- !u!114 &696053473 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2819875029809031943, guid: 9cc0a5878dd151c43a44411c676a09e7,
+    type: 3}
+  m_PrefabInstance: {fileID: 2819875029422835174}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 616aee7935dffb246b191d4b151b0ee0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &727053317
 GameObject:
   m_ObjectHideFlags: 0
@@ -1077,6 +1101,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &952512069 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2819875029809031943, guid: 9cc0a5878dd151c43a44411c676a09e7,
+    type: 3}
+  m_PrefabInstance: {fileID: 1220899612}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 616aee7935dffb246b191d4b151b0ee0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &978624335
 GameObject:
   m_ObjectHideFlags: 0
@@ -1398,6 +1434,10 @@ MonoBehaviour:
   primaryDeviceID: -1
   acInstrumentPlayerPrefab: {fileID: 956335357656454285, guid: 04a5ddf899f3a8645bb560e1251fe81d,
     type: 3}
+  pianoHandler: {fileID: 696053473}
+  drumHandler: {fileID: 1428075257}
+  bassHandler: {fileID: 952512069}
+  trumpetHandler: {fileID: 409078953}
 --- !u!4 &1155514891
 Transform:
   m_ObjectHideFlags: 0
@@ -1750,6 +1790,18 @@ Transform:
   m_Father: {fileID: 7741185}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1428075257 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2819875029809031943, guid: 9cc0a5878dd151c43a44411c676a09e7,
+    type: 3}
+  m_PrefabInstance: {fileID: 1750377342}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 616aee7935dffb246b191d4b151b0ee0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1464303984
 GameObject:
   m_ObjectHideFlags: 0
