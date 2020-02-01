@@ -37,6 +37,7 @@ public class InstrumentRhythmHandler : MonoBehaviour
     public Text debuffText;
 
     GameObject beatObject;
+    public Text numberOfPlayers;
 
 
     private void Start()

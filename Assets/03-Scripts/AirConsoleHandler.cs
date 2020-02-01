@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using NDream.AirConsole;
 using Newtonsoft.Json.Linq;
+using UnityEngine.UI;
 
 public enum PlayerAction {
   LEFT,
@@ -138,26 +139,31 @@ public class AirConsoleHandler : MonoBehaviour, IHostController
         {
             player.insRhythmHandler = pianoHandler;
             pianoHandler.numberofActivePlayers++;
+            pianoHandler.numberOfPlayers.text = "Players: " + pianoHandler.numberOfPlayers.ToString();
             Debug.Log("Added a pianist");
         } else if (drumHandler.numberofActivePlayers == 0)
         {
             player.insRhythmHandler = drumHandler;
             drumHandler.numberofActivePlayers++;
+            drumHandler.numberOfPlayers.text = "Players: " + drumHandler.numberOfPlayers.ToString();
             Debug.Log("Added a drummer");
         } else if (bassHandler.numberofActivePlayers == 0)
         {
             player.insRhythmHandler = bassHandler;
             bassHandler.numberofActivePlayers++;
+            bassHandler.numberOfPlayers.text = "Players: " + bassHandler.numberOfPlayers.ToString();
             Debug.Log("Added a bassist");
         } else if (trumpetHandler.numberofActivePlayers == 0) {
             player.insRhythmHandler = trumpetHandler;
             trumpetHandler.numberofActivePlayers++;
+            trumpetHandler.numberOfPlayers.text = "Players: " + trumpetHandler.numberOfPlayers.ToString();
             Debug.Log("Added a trumpeter");
         } else
         {
             InstrumentRhythmHandler chosenhandler = allHandlers[Random.Range(0, 3)];
             player.insRhythmHandler = chosenhandler;
             chosenhandler.numberofActivePlayers++;
+            chosenhandler.numberOfPlayers.text = "Players: " + chosenhandler.numberOfPlayers.ToString();
             Debug.Log("Added a player to a random handler");
 
         }
