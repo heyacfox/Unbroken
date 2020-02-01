@@ -139,31 +139,31 @@ public class AirConsoleHandler : MonoBehaviour, IHostController
         {
             player.insRhythmHandler = pianoHandler;
             pianoHandler.numberofActivePlayers++;
-            pianoHandler.numberOfPlayers.text = "Players: " + pianoHandler.numberOfPlayers.ToString();
+            pianoHandler.numberOfPlayers.text = "Players: " + pianoHandler.numberofActivePlayers.ToString();
             Debug.Log("Added a pianist");
         } else if (drumHandler.numberofActivePlayers == 0)
         {
             player.insRhythmHandler = drumHandler;
             drumHandler.numberofActivePlayers++;
-            drumHandler.numberOfPlayers.text = "Players: " + drumHandler.numberOfPlayers.ToString();
+            drumHandler.numberOfPlayers.text = "Players: " + drumHandler.numberofActivePlayers.ToString();
             Debug.Log("Added a drummer");
         } else if (bassHandler.numberofActivePlayers == 0)
         {
             player.insRhythmHandler = bassHandler;
             bassHandler.numberofActivePlayers++;
-            bassHandler.numberOfPlayers.text = "Players: " + bassHandler.numberOfPlayers.ToString();
+            bassHandler.numberOfPlayers.text = "Players: " + bassHandler.numberofActivePlayers.ToString();
             Debug.Log("Added a bassist");
         } else if (trumpetHandler.numberofActivePlayers == 0) {
             player.insRhythmHandler = trumpetHandler;
             trumpetHandler.numberofActivePlayers++;
-            trumpetHandler.numberOfPlayers.text = "Players: " + trumpetHandler.numberOfPlayers.ToString();
+            trumpetHandler.numberOfPlayers.text = "Players: " + trumpetHandler.numberofActivePlayers.ToString();
             Debug.Log("Added a trumpeter");
         } else
         {
             InstrumentRhythmHandler chosenhandler = allHandlers[Random.Range(0, 3)];
             player.insRhythmHandler = chosenhandler;
             chosenhandler.numberofActivePlayers++;
-            chosenhandler.numberOfPlayers.text = "Players: " + chosenhandler.numberOfPlayers.ToString();
+            chosenhandler.numberOfPlayers.text = "Players: " + chosenhandler.numberofActivePlayers.ToString();
             Debug.Log("Added a player to a random handler");
 
         }
