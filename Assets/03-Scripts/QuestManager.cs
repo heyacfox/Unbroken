@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class QuestManager : MonoBehaviour
 {
@@ -25,11 +26,14 @@ public class QuestManager : MonoBehaviour
     public float timeToTransition;
     public int continueStacks;
 
+    public Text winLoseNotif;
+
 
     private void Start()
     {
         continueStacks = ContinueStacks.instance.currentStacks;
         rpgManager.PlayerHealthSlider.maxValue = rpgManager.playerHealthMax;
+        rpgManager.PlayerHealthSlider.value = rpgManager.PlayerHealthSlider.maxValue;
         StartCoroutine(transitionToNextBattle());
     }
 
@@ -42,6 +46,7 @@ public class QuestManager : MonoBehaviour
     public void startBattle()
     {
         Debug.Log("Battle Started");
+        winLoseNotif.gameObject.SetActive(false);
         if (currentBattleIndex == 0)
         {
             startBattleWithEnemy(enemy1Prefab.GetComponent<EnemyCharacter>());
@@ -73,9 +78,13 @@ public class QuestManager : MonoBehaviour
     public void loseCurrentBattle()
     {
         currentBattleIndex = 0;
+        winLoseNotif.gameObject.SetActive(true);
+        winLoseNotif.text = "Oh no, they beat you! Get your team ready and try again!";
+        enemySpawnPosition.sprite = null;
         //if you lose, you restart from beginning and get +10% health
         rpgManager.playerHealthMax = rpgManager.playerHealthMax + (int)(rpgManager.playerHealthMax / 10);
         rpgManager.PlayerHealthSlider.maxValue = rpgManager.playerHealthMax;
+        rpgManager.PlayerHealthSlider.value = rpgManager.PlayerHealthSlider.maxValue;
         rpgManager.playerHealth = rpgManager.playerHealthMax;
         StartCoroutine(transitionToNextBattle());
 
@@ -88,6 +97,8 @@ public class QuestManager : MonoBehaviour
             SceneManager.LoadScene("Continue-Retire");
         } else 
         {
+            winLoseNotif.gameObject.SetActive(true);
+            winLoseNotif.text = "You healed them! Get ready for the next monster!";
             currentBattleIndex++;
             enemySpawnPosition.sprite = null;
             StartCoroutine(transitionToNextBattle());

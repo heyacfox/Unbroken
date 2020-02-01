@@ -66,7 +66,7 @@ public class RhythmManager : MonoBehaviour
 
     public void gameLost()
     {
-        StopCoroutine(generateBeatsInTime());
+        StopAllCoroutines();
         destroyAllBeatsOnScreen();
         pianoRhythmHandler.gameLost();
         drumsRhythmHandler.gameLost();
