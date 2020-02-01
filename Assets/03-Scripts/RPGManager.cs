@@ -14,6 +14,7 @@ public class RPGManager : MonoBehaviour
     public int numberOfBuffs;
     public int numberOfDebuffs;
     public RhythmManager rhythmManager;
+    public QuestManager questManager;
     
 
     private void Start()
@@ -50,10 +51,13 @@ public class RPGManager : MonoBehaviour
         {
             Debug.Log("You Lose!");
             rhythmManager.gameLost();
+
+            questManager.loseCurrentBattle();
         } else if (monsterHealth >= monsterHealthMax)
         {
             Debug.Log("You win!");
             rhythmManager.gameWon();
+            questManager.winCurrentBattle();
         }
         
     }
