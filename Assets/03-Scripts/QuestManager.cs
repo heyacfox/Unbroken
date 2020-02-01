@@ -22,9 +22,12 @@ public class QuestManager : MonoBehaviour
     public InstrumentRhythmHandler trumpetHandler;
 
     public float timeToTransition;
+    public int continueStacks;
 
     private void Start()
     {
+        continueStacks = ContinueStacks.instance.currentStacks;
+        rpgManager.PlayerHealthSlider.maxValue = rpgManager.playerHealthMax;
         StartCoroutine(transitionToNextBattle());
     }
 
@@ -53,13 +56,14 @@ public class QuestManager : MonoBehaviour
     public void startBattleWithEnemy(EnemyCharacter character)
     {
         rpgManager.monsterHealth = 0;
-        rpgManager.monsterHealthMax = character.enemyHPMax;
+        rpgManager.monsterHealthMax = character.enemyHPMax * continueStacks;
         rhythmManager.startGenerationCoroutine();
         pianoHandler.startGenerationCoroutine();
         drumHandler.startGenerationCoroutine();
         bassHandler.startGenerationCoroutine();
         trumpetHandler.startGenerationCoroutine();
         enemySpawnPosition.sprite = character.enemySprite;
+        rpgManager.EnemyHealthSlider.maxValue = character.enemyHPMax;
 
 
     }
@@ -69,6 +73,7 @@ public class QuestManager : MonoBehaviour
         currentBattleIndex = 0;
         //if you lose, you restart from beginning and get +10% health
         rpgManager.playerHealthMax = rpgManager.playerHealthMax + (int)(rpgManager.playerHealthMax / 10);
+        rpgManager.PlayerHealthSlider.maxValue = rpgManager.playerHealthMax;
         rpgManager.playerHealth = rpgManager.playerHealthMax;
         StartCoroutine(transitionToNextBattle());
 
@@ -82,6 +87,7 @@ public class QuestManager : MonoBehaviour
         } else 
         {
             currentBattleIndex++;
+            enemySpawnPosition.sprite = null;
             StartCoroutine(transitionToNextBattle());
         } 
     }

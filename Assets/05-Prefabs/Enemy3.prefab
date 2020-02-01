@@ -43,5 +43,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae573c7b75f80e74f9cd981e05e14d76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySprite: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+  enemySprite: {fileID: 21300000, guid: 7458e22182f2c3044b11d0257de60425, type: 3}
   enemyHPMax: 60

@@ -36,6 +36,8 @@ public class InstrumentRhythmHandler : MonoBehaviour
     public Text buffText;
     public Text debuffText;
 
+    GameObject beatObject;
+
 
     private void Start()
     {
@@ -192,7 +194,7 @@ public class InstrumentRhythmHandler : MonoBehaviour
     {
         Debug.Log("Made a ins beat");
         InputType chosenInput = (InputType)Random.Range(0, 4);
-        GameObject beatObject = new GameObject() ;
+        
         Sprite spriteToUse = upSprite;
         switch (chosenInput)
         {
