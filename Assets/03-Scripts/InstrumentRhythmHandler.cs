@@ -39,6 +39,9 @@ public class InstrumentRhythmHandler : MonoBehaviour
     GameObject beatObject;
     public Text numberOfPlayers;
 
+    public GameObject buffParticles;
+    public GameObject debuffParticles;
+
 
     private void Start()
     {
@@ -150,7 +153,7 @@ public class InstrumentRhythmHandler : MonoBehaviour
         rpgManager.addDebuffStack();
         battleDebuffAccumulated++;
         updateDebuffText();
-
+        Instantiate(debuffParticles, this.transform);
 
     }
 
@@ -160,6 +163,7 @@ public class InstrumentRhythmHandler : MonoBehaviour
         rpgManager.addBuffStack();
         battleBuffAccumulated++;
         updateBuffText();
+        Instantiate(buffParticles, this.transform);
         //destroyBeat(rhythmBeat);
     }
 
@@ -170,6 +174,7 @@ public class InstrumentRhythmHandler : MonoBehaviour
         battleBuffAccumulated++;
         battleBuffAccumulated++;
         updateBuffText();
+        Instantiate(buffParticles, this.transform);
         //destroyBeat(rhythmBeat);
     }
 
