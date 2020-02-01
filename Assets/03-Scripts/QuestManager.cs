@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement
 
 public class QuestManager : MonoBehaviour
 {
@@ -23,6 +24,7 @@ public class QuestManager : MonoBehaviour
 
     public float timeToTransition;
     public int continueStacks;
+
 
     private void Start()
     {
@@ -83,7 +85,7 @@ public class QuestManager : MonoBehaviour
     {
         if (currentBattleIndex == 2)
         {
-            Debug.Log("Go to continue/retire screen");
+            SceneManager.LoadScene("Continue-Retire");
         } else 
         {
             currentBattleIndex++;
