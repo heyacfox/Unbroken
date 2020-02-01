@@ -10,6 +10,7 @@ public class RPGManager : MonoBehaviour
     public int monsterHealthMax;
     public int monsterHealth;
     public Slider EnemyHealthSlider;
+    public Slider PlayerHealthSlider;
 
     public int numberOfBuffs;
     public int numberOfDebuffs;
@@ -41,6 +42,7 @@ public class RPGManager : MonoBehaviour
     {
         playerHealth = playerHealth - numberOfDebuffs - 1;
         numberOfDebuffs = 0;
+        PlayerHealthSlider.value = playerHealth;
         checkGameEndCondition();
     }
 
