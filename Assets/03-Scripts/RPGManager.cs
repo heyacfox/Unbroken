@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class RPGManager : MonoBehaviour
 {
@@ -8,10 +9,12 @@ public class RPGManager : MonoBehaviour
     public int playerHealth;
     public int monsterHealthMax;
     public int monsterHealth;
+    public Slider EnemyHealthSlider;
 
     public int numberOfBuffs;
     public int numberOfDebuffs;
     public RhythmManager rhythmManager;
+    
 
     private void Start()
     {
@@ -24,11 +27,13 @@ public class RPGManager : MonoBehaviour
         monsterHealth = 0;
     }
 
-    public void playerHitOccurred(int extraHeal)
+    
+        public void playerHitOccurred(int extraHeal)
     {
         //eextra heal is for the "perfect" condition.
         monsterHealth = monsterHealth + numberOfBuffs + extraHeal;
         numberOfBuffs = 0;
+        EnemyHealthSlider.value = monsterHealth;
         checkGameEndCondition();
     }
 
