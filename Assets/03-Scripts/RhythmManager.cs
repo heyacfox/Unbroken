@@ -28,7 +28,12 @@ public class RhythmManager : MonoBehaviour
     public GameObject perfectIndicatorPrefab;
     public GameObject goodIndicatorPrefab;
     public GameObject missIndicatorPrefab;
- 
+
+    public InstrumentRhythmHandler pianoRhythmHandler;
+    public InstrumentRhythmHandler drumsRhythmHandler;
+    public InstrumentRhythmHandler bassRhythmHandler;
+    public InstrumentRhythmHandler trumpetRhythmHandler;
+
 
     public void Start()
     {
@@ -53,12 +58,20 @@ public class RhythmManager : MonoBehaviour
     {
         StopAllCoroutines();
         destroyAllBeatsOnScreen();
+        pianoRhythmHandler.gameWon();
+        drumsRhythmHandler.gameWon();
+        bassRhythmHandler.gameWon();
+        trumpetRhythmHandler.gameWon();
     }
 
     public void gameLost()
     {
         StopCoroutine(generateBeatsInTime());
         destroyAllBeatsOnScreen();
+        pianoRhythmHandler.gameLost();
+        drumsRhythmHandler.gameLost();
+        bassRhythmHandler.gameLost();
+        trumpetRhythmHandler.gameLost();
     }
 
     private void destroyAllBeatsOnScreen()

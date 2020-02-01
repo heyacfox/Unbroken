@@ -1027,6 +1027,10 @@ MonoBehaviour:
     type: 3}
   missIndicatorPrefab: {fileID: 6683568234559120714, guid: 78ead9c9de167ce4c9ab1bd6acf5d1af,
     type: 3}
+  pianoRhythmHandler: {fileID: 3457644964991319106}
+  drumsRhythmHandler: {fileID: 639001664347642586}
+  bassRhythmHandler: {fileID: 639001664891833016}
+  trumpetRhythmHandler: {fileID: 639001663070687971}
 --- !u!1 &1102592885
 GameObject:
   m_ObjectHideFlags: 0
@@ -1844,7 +1848,7 @@ MonoBehaviour:
   numberOfBuffs: 0
   numberOfDebuffs: 0
   rhythmManager: {fileID: 978624336}
-  questManager: {fileID: 0}
+  questManager: {fileID: 477689869}
 --- !u!1 &3457644965367212330
 GameObject:
   m_ObjectHideFlags: 0
@@ -2202,6 +2206,11 @@ PrefabInstance:
       propertyPath: buffText
       value: 
       objectReference: {fileID: 1551870087}
+    - target: {fileID: 2819875029809031943, guid: 9cc0a5878dd151c43a44411c676a09e7,
+        type: 3}
+      propertyPath: rpgManager
+      value: 
+      objectReference: {fileID: 3457644964095429890}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9cc0a5878dd151c43a44411c676a09e7, type: 3}
 --- !u!4 &639001663070687969 stripped
@@ -2304,6 +2313,11 @@ PrefabInstance:
       propertyPath: buffText
       value: 
       objectReference: {fileID: 1102592887}
+    - target: {fileID: 2819875029809031943, guid: 9cc0a5878dd151c43a44411c676a09e7,
+        type: 3}
+      propertyPath: rpgManager
+      value: 
+      objectReference: {fileID: 3457644964095429890}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9cc0a5878dd151c43a44411c676a09e7, type: 3}
 --- !u!114 &639001664891833016 stripped
@@ -2406,6 +2420,11 @@ PrefabInstance:
       propertyPath: buffText
       value: 
       objectReference: {fileID: 475575266}
+    - target: {fileID: 2819875029809031943, guid: 9cc0a5878dd151c43a44411c676a09e7,
+        type: 3}
+      propertyPath: rpgManager
+      value: 
+      objectReference: {fileID: 3457644964095429890}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9cc0a5878dd151c43a44411c676a09e7, type: 3}
 --- !u!4 &639001664347642584 stripped
