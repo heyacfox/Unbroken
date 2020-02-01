@@ -6,27 +6,41 @@ public class ACInstrumentPlayer : MonoBehaviour
 {
     public int deviceTracker;
     public InstrumentRhythmHandler insRhythmHandler;
+    public bool holdFlag = false;
+    public float waitingTimeToNextInput = 1f;
 
     public void ButtonInput(string input)
     {
-
-        switch (input)
+        if (holdFlag == false)
         {
-            case "right":
-                insRhythmHandler.receivedPressedTypeInput(InputType.right, this);
-                break;
-            case "left":
-                insRhythmHandler.receivedPressedTypeInput(InputType.left, this);
-                break;
-            case "up":
-                insRhythmHandler.receivedPressedTypeInput(InputType.up, this);
-                break;
-            case "down":
-                insRhythmHandler.receivedPressedTypeInput(InputType.down, this);
-                break;
-            
-            
+            switch (input)
+            {
+                case "right":
+                    insRhythmHandler.receivedPressedTypeInput(InputType.right, this);
+                    break;
+                case "left":
+                    insRhythmHandler.receivedPressedTypeInput(InputType.left, this);
+                    break;
+                case "up":
+                    insRhythmHandler.receivedPressedTypeInput(InputType.up, this);
+                    break;
+                case "down":
+                    insRhythmHandler.receivedPressedTypeInput(InputType.down, this);
+                    break;
+
+
+            }
+
+            StartCoroutine(restrictInput());
         }
+
+    }
+
+    IEnumerator restrictInput()
+    {
+        holdFlag = true;
+        yield return new WaitForSeconds(waitingTimeToNextInput);
+        holdFlag = false;
     }
 
     public void gotMiss()

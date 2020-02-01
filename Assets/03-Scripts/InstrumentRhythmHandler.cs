@@ -107,7 +107,7 @@ public class InstrumentRhythmHandler : MonoBehaviour
         RhythmBeat rhythmBeatToCheck = instrumentRhythmBeats[0];
         float distanceToTarget = Vector2.Distance(rhythmBeatToCheck.gameObject.transform.position, rhythmTarget.transform.position);
 
-        Debug.Log($"Distance to target is [{distanceToTarget}s]");
+        //Debug.Log($"Distance to target is [{distanceToTarget}s]");
 
 
         //if the beat is outside the nearness check, don't check it
@@ -182,6 +182,7 @@ public class InstrumentRhythmHandler : MonoBehaviour
 
     private void updateDebuffText()
     {
+        Debug.Log($"Update Debuff Text it should now be [{battleDebuffAccumulated}]");
         debuffText.text = "-" + battleDebuffAccumulated;
     }
 

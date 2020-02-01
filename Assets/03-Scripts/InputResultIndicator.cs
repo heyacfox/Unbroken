@@ -10,6 +10,7 @@ public class InputResultIndicator : MonoBehaviour
     void Start()
     {
         this.GetComponent<Rigidbody2D>().velocity = new Vector2(0, upSpeed);
+        StartCoroutine(destroyAfterTime());
     }
 
     IEnumerator destroyAfterTime()
