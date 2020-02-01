@@ -74,6 +74,21 @@ public class RhythmManager : MonoBehaviour
         trumpetRhythmHandler.gameLost();
     }
 
+    public int getAllBuffs()
+    {
+        return pianoRhythmHandler.battleBuffAccumulated +
+            drumsRhythmHandler.battleBuffAccumulated +
+            bassRhythmHandler.battleBuffAccumulated +
+            trumpetRhythmHandler.battleBuffAccumulated;
+    }
+    public int getAllDebuffs()
+    {
+        return pianoRhythmHandler.battleDebuffAccumulated +
+            drumsRhythmHandler.battleDebuffAccumulated +
+            bassRhythmHandler.battleDebuffAccumulated +
+            trumpetRhythmHandler.battleDebuffAccumulated;
+    }
+
     private void destroyAllBeatsOnScreen()
     {
         foreach (Transform child in rhythmSpawnLocation.transform)

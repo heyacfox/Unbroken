@@ -32,7 +32,7 @@ public class RPGManager : MonoBehaviour
         public void playerHitOccurred(int extraHeal)
     {
         //eextra heal is for the "perfect" condition.
-        monsterHealth = monsterHealth + numberOfBuffs + extraHeal;
+        monsterHealth = monsterHealth + rhythmManager.getAllBuffs() + extraHeal;
         numberOfBuffs = 0;
         EnemyHealthSlider.value = monsterHealth;
         checkGameEndCondition();
@@ -40,7 +40,7 @@ public class RPGManager : MonoBehaviour
 
     public void playerMissOccurred()
     {
-        playerHealth = playerHealth - numberOfDebuffs - 1;
+        playerHealth = playerHealth - rhythmManager.getAllDebuffs() - 1;
         numberOfDebuffs = 0;
         checkGameEndCondition();
     }

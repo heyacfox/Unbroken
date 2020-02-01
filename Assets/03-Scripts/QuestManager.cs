@@ -21,7 +21,7 @@ public class QuestManager : MonoBehaviour
     public InstrumentRhythmHandler bassHandler;
     public InstrumentRhythmHandler trumpetHandler;
 
-    float timeToTransition;
+    public float timeToTransition;
 
     private void Start()
     {

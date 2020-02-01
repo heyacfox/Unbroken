@@ -32,7 +32,9 @@ public class InstrumentRhythmHandler : MonoBehaviour
     public float nearnessCheckForPerfect = 0.5f;
 
     public int battleBuffAccumulated;
+    public int battleDebuffAccumulated;
     public Text buffText;
+    public Text debuffText;
 
 
     private void Start()
@@ -143,13 +145,14 @@ public class InstrumentRhythmHandler : MonoBehaviour
     public void registerTargetMiss()
     {
         rpgManager.addDebuffStack();
-        battleBuffAccumulated--;
-        updateBuffText();
+        battleDebuffAccumulated++;
+        updateDebuffText();
 
 
     }
 
     private void registerTargetGood()
+
     {
         rpgManager.addBuffStack();
         battleBuffAccumulated++;
@@ -169,19 +172,14 @@ public class InstrumentRhythmHandler : MonoBehaviour
 
     private void updateBuffText()
     {
-        if (battleBuffAccumulated > 0)
-        {
-            buffText.color = new Color(0f, 1f, 0f);
-            buffText.text = "+" + battleBuffAccumulated;
-        } else if (battleBuffAccumulated < 0)
-        {
-            buffText.color = new Color(1f, 0f, 0f);
-            buffText.text = "-" + battleBuffAccumulated;
-        } else
-        {
-            buffText.color = new Color(1f, 1f, 1f);
-            buffText.text = "0";
-        }
+
+        buffText.text = "+" + battleBuffAccumulated;
+        
+    }
+
+    private void updateDebuffText()
+    {
+        debuffText.text = "-" + battleDebuffAccumulated;
     }
 
     public void destroyBeat(RhythmBeat rhythmBeat)
