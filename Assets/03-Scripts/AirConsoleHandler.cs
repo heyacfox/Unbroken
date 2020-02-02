@@ -176,11 +176,14 @@ public class AirConsoleHandler : MonoBehaviour
             return PlayerType.TRUMPET;
         } else
         {
-            InstrumentRhythmHandler chosenhandler = allHandlers[UnityEngine.Random.Range(0, 4)];
+            int pickedHandler = UnityEngine.Random.Range(0, 4);
+            InstrumentRhythmHandler chosenhandler = allHandlers[pickedHandler];
+            
             player.insRhythmHandler = chosenhandler;
             chosenhandler.numberofActivePlayers++;
             chosenhandler.numberOfPlayers.text = "Players: " + chosenhandler.numberofActivePlayers.ToString();
             Debug.Log("Added a player to a random handler");
+            return (PlayerType)(pickedHandler + 1);
 
         }
         return PlayerType.UNKNOWN;
