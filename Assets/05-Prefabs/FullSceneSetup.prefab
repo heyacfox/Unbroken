@@ -3871,6 +3871,10 @@ MonoBehaviour:
   numberOfDebuffs: 0
   rhythmManager: {fileID: 978624336}
   questManager: {fileID: 477689869}
+  creaturePosition: {fileID: 2126193025}
+  healParticlePrefab: {fileID: 4508098338485911420, guid: fbb402c178869564e9611fd3656d376e,
+    type: 3}
+  increaseParticleSizePerBuffAmount: 0.05
 --- !u!1 &3457644965367212330
 GameObject:
   m_ObjectHideFlags: 0

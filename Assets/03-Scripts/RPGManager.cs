@@ -16,6 +16,9 @@ public class RPGManager : MonoBehaviour
     public int numberOfDebuffs;
     public RhythmManager rhythmManager;
     public QuestManager questManager;
+    public Transform creaturePosition;
+    public GameObject healParticlePrefab;
+    public float increaseParticleSizePerBuffAmount = 0.05f;
     
 
     private void Start()
@@ -37,6 +40,9 @@ public class RPGManager : MonoBehaviour
         monsterHealth = monsterHealth + rhythmManager.getAllBuffs() + extraHeal;
         numberOfBuffs = 0;
         EnemyHealthSlider.value = monsterHealth;
+        GameObject particleGenerated = Instantiate(healParticlePrefab, creaturePosition);
+        float newScale = particleGenerated.transform.localScale.x + (increaseParticleSizePerBuffAmount * rhythmManager.getAllBuffs());
+        particleGenerated.transform.localScale = new Vector2(newScale, newScale);
         checkGameEndCondition();
     }
 

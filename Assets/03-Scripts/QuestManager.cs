@@ -77,6 +77,7 @@ public class QuestManager : MonoBehaviour
     {
         rpgManager.monsterHealth = 0;
         rpgManager.monsterHealthMax = character.enemyHPMax * continueStacks;
+        
         rhythmManager.startGenerationCoroutine();
         /*
         pianoHandler.startGenerationCoroutine();
@@ -85,8 +86,9 @@ public class QuestManager : MonoBehaviour
         trumpetHandler.startGenerationCoroutine();
         */
         enemySpawnPosition.sprite = character.enemySprite;
-        rpgManager.EnemyHealthSlider.maxValue = character.enemyHPMax;
-        
+        rpgManager.EnemyHealthSlider.maxValue = rpgManager.monsterHealthMax;
+        rpgManager.EnemyHealthSlider.value = 0;
+
 
     }
 
