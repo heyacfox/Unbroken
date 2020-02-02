@@ -19,6 +19,7 @@ public class RPGManager : MonoBehaviour
     public Transform creaturePosition;
     public GameObject healParticlePrefab;
     public float increaseParticleSizePerBuffAmount = 0.001f;
+    public AudioSource healMonsterSound;
     
 
     private void Start()
@@ -78,6 +79,7 @@ public class RPGManager : MonoBehaviour
         {
             Debug.Log("You win!");
             rhythmManager.gameWon();
+            healMonsterSound.Play();
             questManager.winCurrentBattle();
         }
         
