@@ -548,7 +548,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: e4a12d12d1df68d4eb6e9df612171885, type: 3}
+    m_Font: {fileID: 12800000, guid: 1cd79b9ce071ac54bb012f6d300ba8e1, type: 3}
     m_FontSize: 35
     m_FontStyle: 0
     m_BestFit: 0
@@ -625,7 +625,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: e4a12d12d1df68d4eb6e9df612171885, type: 3}
+    m_Font: {fileID: 12800000, guid: 1cd79b9ce071ac54bb012f6d300ba8e1, type: 3}
     m_FontSize: 35
     m_FontStyle: 0
     m_BestFit: 0
@@ -755,8 +755,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -12, y: 322}
-  m_SizeDelta: {x: 404.1, y: 105.5}
+  m_AnchoredPosition: {x: 30, y: 322}
+  m_SizeDelta: {x: 465.1, y: 105.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1306757240
 MonoBehaviour:
@@ -777,7 +777,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: e4a12d12d1df68d4eb6e9df612171885, type: 3}
+    m_Font: {fileID: 12800000, guid: 1cd79b9ce071ac54bb012f6d300ba8e1, type: 3}
     m_FontSize: 80
     m_FontStyle: 1
     m_BestFit: 0
@@ -1234,8 +1234,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 22, y: 88}
-  m_SizeDelta: {x: 1135.2, y: 236.1}
+  m_AnchoredPosition: {x: 25.25, y: 71}
+  m_SizeDelta: {x: 1130.7, y: 305}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1681300030
 MonoBehaviour:
@@ -1256,12 +1256,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: e4a12d12d1df68d4eb6e9df612171885, type: 3}
-    m_FontSize: 50
+    m_Font: {fileID: 12800000, guid: 1cd79b9ce071ac54bb012f6d300ba8e1, type: 3}
+    m_FontSize: 60
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 5
-    m_MaxSize: 50
+    m_MaxSize: 60
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1

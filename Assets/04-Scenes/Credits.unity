@@ -176,7 +176,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: e4a12d12d1df68d4eb6e9df612171885, type: 3}
+    m_Font: {fileID: 12800000, guid: 1cd79b9ce071ac54bb012f6d300ba8e1, type: 3}
     m_FontSize: 35
     m_FontStyle: 0
     m_BestFit: 0
@@ -231,7 +231,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 113, y: -405}
+  m_AnchoredPosition: {x: 85, y: -366.7}
   m_SizeDelta: {x: 535.7, y: 61.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1068463838
@@ -253,7 +253,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: e4a12d12d1df68d4eb6e9df612171885, type: 3}
+    m_Font: {fileID: 12800000, guid: 1cd79b9ce071ac54bb012f6d300ba8e1, type: 3}
     m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
@@ -308,8 +308,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 12, y: 276}
-  m_SizeDelta: {x: 296.9, y: 100.2}
+  m_AnchoredPosition: {x: 70.55005, y: 276}
+  m_SizeDelta: {x: 414, y: 100.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1217754348
 MonoBehaviour:
@@ -330,7 +330,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: e4a12d12d1df68d4eb6e9df612171885, type: 3}
+    m_Font: {fileID: 12800000, guid: 1cd79b9ce071ac54bb012f6d300ba8e1, type: 3}
     m_FontSize: 70
     m_FontStyle: 0
     m_BestFit: 0
@@ -468,8 +468,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 347.5, y: -106}
-  m_SizeDelta: {x: 433.9, y: 607}
+  m_AnchoredPosition: {x: 407, y: -94}
+  m_SizeDelta: {x: 591.8, y: 607}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1393766904
 MonoBehaviour:
@@ -490,7 +490,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: e4a12d12d1df68d4eb6e9df612171885, type: 3}
+    m_Font: {fileID: 12800000, guid: 1cd79b9ce071ac54bb012f6d300ba8e1, type: 3}
     m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
@@ -509,7 +509,6 @@ MonoBehaviour:
 
 
     Jimmy Sambou
-
 
     Christopher  Hopkins
 
@@ -629,8 +628,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -36, y: -144}
-  m_SizeDelta: {x: 385.8, y: 663.4}
+  m_AnchoredPosition: {x: 12, y: -147}
+  m_SizeDelta: {x: 531.1, y: 640.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1413132098
 MonoBehaviour:
@@ -651,7 +650,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: e4a12d12d1df68d4eb6e9df612171885, type: 3}
+    m_Font: {fileID: 12800000, guid: 1cd79b9ce071ac54bb012f6d300ba8e1, type: 3}
     m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
@@ -670,7 +669,6 @@ MonoBehaviour:
 
 
     Programmer
-
 
 
     Artist
