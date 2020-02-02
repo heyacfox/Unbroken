@@ -63,9 +63,16 @@ public class AirConsoleHandler : MonoBehaviour
             
         } catch (Exception e)
         {
-            Debug.Log("Air console wasn't ready, not calling initial setup");
+            Debug.Log($"Air console wasn't ready, not calling initial setup [{e.StackTrace}]");
+            StartCoroutine(tryStartAgain());
         }
         
+    }
+
+    IEnumerator tryStartAgain()
+    {
+        yield return new WaitForSeconds(5f);
+        FakeStart();
     }
 
     public void onAction(int fromDeviceId, PlayerAction action) {
