@@ -15,6 +15,10 @@
     color: white;
   }
 
+  .arrow_image {
+    height: 100%;
+    width: 100%;
+  }
   .button{
     background: #3B3B3B;
     font-size: 14px;
@@ -134,14 +138,19 @@
 </head>
 <body onload="window.app = new App()">
   <div id="background"></div>
-  <div class="button" id="left-button" ontouchstart="window.app.sendMessageToScreen('left')" ontouchend="window.app.sendMessageToScreen('left-up')"><span class="button-text">LEFT</span></div>
-  <div class="button" id="right-button" ontouchstart="window.app.sendMessageToScreen('right')" ontouchend="window.app.sendMessageToScreen('right-up')"><span class="button-text">RIGHT</span></div>
-  <div class="button" id="up-button" ontouchstart="window.app.sendMessageToScreen('up')" ontouchend="window.app.sendMessageToScreen('up-up')"><span class="button-text">UP</span></div>
-  <div class="button" id="down-button" ontouchstart="window.app.sendMessageToScreen('down')" ontouchend="window.app.sendMessageToScreen('down-up')"><span class="button-text">DOWN</span></div>
+<div class="button" id="left-button" ontouchstart="window.app.sendMessageToScreen('left')" ontouchend="window.app.sendMessageToScreen('left-up')"><img class="arrow_image" src="left_arrow.png" /><!--span class="button-text">LEFT</span--></div>
+  <div class="button" id="right-button" ontouchstart="window.app.sendMessageToScreen('right')" ontouchend="window.app.sendMessageToScreen('right-up')"><img class="arrow_image" src="right_arrow.png" /><!--span class="button-text">RIGHT</span--></div>
+  <div class="button" id="up-button" ontouchstart="window.app.sendMessageToScreen('up')" ontouchend="window.app.sendMessageToScreen('up-up')"><img class="arrow_image" src="up_arrow.png" /><!--span class="button-text">UP</span--></div>
+  <div class="button" id="down-button" ontouchstart="window.app.sendMessageToScreen('down')" ontouchend="window.app.sendMessageToScreen('down-up')"><img class="arrow_image" src="down_arrow.png" /><!--span class="button-text">DOWN</span--></div>
   <div id="info">
     <span id="playerTypeText"></span>
     <br>
     <span id="hitText"></span>
   </div>
+<!-- <audio id="myAudio" controls>
+  <source src="horse.ogg" type="audio/ogg">
+    <source src="horse.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+</audio> -->
 </body>
 </html>
