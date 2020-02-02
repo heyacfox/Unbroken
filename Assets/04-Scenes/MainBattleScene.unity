@@ -215,6 +215,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3457644964095429890, guid: ecc1644056e26e14db27379b620847a7,
+        type: 3}
+      propertyPath: increaseParticleSizePerBuffAmount
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 3457644965591989744, guid: ecc1644056e26e14db27379b620847a7,
         type: 3}
       propertyPath: m_LocalPosition.x
