@@ -128,6 +128,7 @@ public class AirConsoleHandler : MonoBehaviour
             player.insRhythmHandler = pianoHandler;
             pianoHandler.numberofActivePlayers++;
             pianoHandler.numberOfPlayers.text = "Players: " + pianoHandler.numberofActivePlayers.ToString();
+            pianoHandler.startAudio();
             Debug.Log("Added a pianist");
             return PlayerType.PIANO;
         } else if (drumHandler.numberofActivePlayers == 0)
@@ -135,6 +136,7 @@ public class AirConsoleHandler : MonoBehaviour
             player.insRhythmHandler = drumHandler;
             drumHandler.numberofActivePlayers++;
             drumHandler.numberOfPlayers.text = "Players: " + drumHandler.numberofActivePlayers.ToString();
+            drumHandler.startAudio();
             Debug.Log("Added a drummer");
             return PlayerType.DRUM;
         } else if (bassHandler.numberofActivePlayers == 0)
@@ -142,12 +144,14 @@ public class AirConsoleHandler : MonoBehaviour
             player.insRhythmHandler = bassHandler;
             bassHandler.numberofActivePlayers++;
             bassHandler.numberOfPlayers.text = "Players: " + bassHandler.numberofActivePlayers.ToString();
+            bassHandler.startAudio();
             Debug.Log("Added a bassist");
             return PlayerType.BASS;
         } else if (trumpetHandler.numberofActivePlayers == 0) {
             player.insRhythmHandler = trumpetHandler;
             trumpetHandler.numberofActivePlayers++;
             trumpetHandler.numberOfPlayers.text = "Players: " + trumpetHandler.numberofActivePlayers.ToString();
+            trumpetHandler.startAudio();
             Debug.Log("Added a trumpeter");
             return PlayerType.TRUMPET;
         } else

@@ -42,11 +42,18 @@ public class InstrumentRhythmHandler : MonoBehaviour
     public GameObject buffParticles;
     public GameObject debuffParticles;
 
+    public AudioSource myAudioOrigin;
+
 
     private void Start()
     {
         instrumentRhythmBeats = new List<RhythmBeat>();
         //StartCoroutine(generateBeatsInTime());
+    }
+
+    public void startAudio()
+    {
+        myAudioOrigin.volume = 0.5f;
     }
 
     IEnumerator generateBeatsInTime()
@@ -157,6 +164,7 @@ public class InstrumentRhythmHandler : MonoBehaviour
         battleDebuffAccumulated++;
         updateDebuffText();
         Instantiate(debuffParticles, this.transform);
+        myAudioOrigin.volume = myAudioOrigin.volume - .01f;
 
     }
 
@@ -167,6 +175,7 @@ public class InstrumentRhythmHandler : MonoBehaviour
         battleBuffAccumulated++;
         updateBuffText();
         Instantiate(buffParticles, this.transform);
+        myAudioOrigin.volume = myAudioOrigin.volume + .01f;
         //destroyBeat(rhythmBeat);
     }
 
@@ -178,6 +187,7 @@ public class InstrumentRhythmHandler : MonoBehaviour
         battleBuffAccumulated++;
         updateBuffText();
         Instantiate(buffParticles, this.transform);
+        myAudioOrigin.volume = myAudioOrigin.volume + .02f;
         //destroyBeat(rhythmBeat);
     }
 
@@ -185,6 +195,7 @@ public class InstrumentRhythmHandler : MonoBehaviour
     {
 
         buffText.text = "+" + battleBuffAccumulated;
+        
         
     }
 
