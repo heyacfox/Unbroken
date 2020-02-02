@@ -17,9 +17,13 @@ public class RPGManager : MonoBehaviour
     public RhythmManager rhythmManager;
     public QuestManager questManager;
     public Transform creaturePosition;
+    public Transform mainCharacterPosition;
     public GameObject healParticlePrefab;
     public float increaseParticleSizePerBuffAmount = 0.001f;
     public AudioSource healMonsterSound;
+
+    public GameObject healAnimationObject;
+    public GameObject hitAnimationObject;
     
 
     private void Start()
@@ -48,14 +52,22 @@ public class RPGManager : MonoBehaviour
 
     IEnumerator doPlayerIsHitEffects()
     {
+        GameObject hitGenerated = Instantiate(hitAnimationObject, creaturePosition);
+        float newScale = hitGenerated.transform.localScale.x + (increaseParticleSizePerBuffAmount * rhythmManager.getAllDebuffs());
+        hitGenerated.transform.localScale = new Vector3(newScale, newScale, newScale);
         yield return new WaitForSeconds(1f);
     }   
 
     IEnumerator doFriendIsHealedEffects()
     {
+        /*
         GameObject particleGenerated = Instantiate(healParticlePrefab, creaturePosition);
         float newScale = particleGenerated.transform.localScale.x + (increaseParticleSizePerBuffAmount * rhythmManager.getAllBuffs());
         particleGenerated.transform.localScale = new Vector3(newScale, newScale, newScale);
+        */
+        GameObject healGenerated = Instantiate(healAnimationObject, creaturePosition);
+        float newScale = healGenerated.transform.localScale.x + (increaseParticleSizePerBuffAmount * rhythmManager.getAllBuffs());
+        healGenerated.transform.localScale = new Vector3(newScale, newScale, newScale);
         yield return new WaitForSeconds(1f);
     }
 

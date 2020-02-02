@@ -87,6 +87,8 @@ public class QuestManager : MonoBehaviour
         trumpetHandler.startGenerationCoroutine();
         */
         enemySpawnPosition.sprite = character.enemySprite;
+        enemySpawnPosition.color = new Color(1, 1, 1, 0);
+        StartCoroutine(fadeInEnemySprite());
         rpgManager.EnemyHealthSlider.maxValue = rpgManager.monsterHealthMax;
         rpgManager.EnemyHealthSlider.value = 0;
 
@@ -137,8 +139,21 @@ public class QuestManager : MonoBehaviour
         enemySpawnPosition.color = new Color(1, 1, 1, 1);
     }
 
+    IEnumerator fadeInEnemySprite()
+    {
+
+        for (float i = 1; i >= 0; i -= Time.deltaTime)
+        {
+            // set color with i as alpha
+            enemySpawnPosition.color = new Color(1, 1, 1, 1);
+            yield return null;
+        }
+        enemySpawnPosition.sprite = null;
+        enemySpawnPosition.color = new Color(1, 1, 1, 1);
+    }
 
 
 
-    
+
+
 }
