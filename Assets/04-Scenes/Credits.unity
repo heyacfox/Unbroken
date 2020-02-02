@@ -502,22 +502,25 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Name
+  m_Text: 'Douglas Cline
 
 
-    Name
+    Nathan Hahn
 
 
-    Name
+    Jimmy Sambou
 
 
-    Name
+    Christopher  Hopkins
 
 
-    Name
+    Beau Griffith
 
 
-    Name'
+    Douglas Isanogle
+
+
+'
 --- !u!222 &1393766905
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -626,8 +629,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -7, y: -72}
-  m_SizeDelta: {x: 160, y: 169.35}
+  m_AnchoredPosition: {x: -5.8, y: -82}
+  m_SizeDelta: {x: 157.6, y: 189.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1413132098
 MonoBehaviour:
@@ -660,10 +663,15 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Project Manager
+  m_Text: 'Art Design
+
+
+    Program Design
 
 
     Programmer
+
+
 
 
     Artist
