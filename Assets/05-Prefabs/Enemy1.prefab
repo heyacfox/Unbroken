@@ -44,4 +44,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemySprite: {fileID: 21300000, guid: 7458e22182f2c3044b11d0257de60425, type: 3}
-  enemyHPMax: 2
+  enemyHPMax: 10

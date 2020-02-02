@@ -42,10 +42,31 @@ public class RhythmManager : MonoBehaviour
 
     IEnumerator generateBeatsInTime()
     {
-        while(true)
+        pianoRhythmHandler.myAudioOrigin.Play();
+        drumsRhythmHandler.myAudioOrigin.Play();
+        bassRhythmHandler.myAudioOrigin.Play();
+        trumpetRhythmHandler.myAudioOrigin.Play();
+        while (true)
         {
             yield return new WaitForSeconds(generateBeatEveryXSeconds);
             generateBeat();
+            Debug.Log($"MainBeatGenerated at [{Time.realtimeSinceStartup}]");
+            if (pianoRhythmHandler.numberofActivePlayers > 0)
+            {
+                pianoRhythmHandler.generateBeat();
+            }
+            if (drumsRhythmHandler.numberofActivePlayers > 0)
+            {
+                drumsRhythmHandler.generateBeat();
+            }
+            if (bassRhythmHandler.numberofActivePlayers > 0)
+            {
+                bassRhythmHandler.generateBeat();
+            }
+            if (trumpetRhythmHandler.numberofActivePlayers > 0)
+            {
+                trumpetRhythmHandler.generateBeat();
+            }
         }
     }
 

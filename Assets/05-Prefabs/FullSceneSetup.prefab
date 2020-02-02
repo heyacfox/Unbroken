@@ -402,7 +402,7 @@ RectTransform:
   m_GameObject: {fileID: 214333784}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 560341148}
   m_RootOrder: 0
@@ -433,12 +433,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 1, b: 0.046749115, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 44e574486504ec14aa32f62e06d26e5b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -782,7 +782,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 390829780}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.85, y: 1.94, z: 0.16350889}
+  m_LocalPosition: {x: -3, y: 1.94, z: 0.16350889}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1973008635}
@@ -1610,7 +1610,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 727053317}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 12.27, y: 1.94, z: 0.16350889}
+  m_LocalPosition: {x: 12, y: 1.94, z: 0.16350889}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1973008635}
@@ -1845,11 +1845,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: 64343ebd8baf67c4dbddf45e278a835f, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 0
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -1981,8 +1981,8 @@ MonoBehaviour:
   nearnessCheckForBeat: 3
   accuracyRequirementGood: 1
   accuracyRequirementPerfect: 0.5
-  rhythmBeatsSpeed: 1.5
-  generateBeatEveryXSeconds: 2.3333333
+  rhythmBeatsSpeed: 2.6251
+  generateBeatEveryXSeconds: 1.714
   playerHP: 0
   enemyHealAmount: 0
   beatUp: {fileID: 21300000, guid: 2fcd7d11759d2344fbb4fd00817b6f09, type: 3}
@@ -2708,11 +2708,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: 434038ef9b9e7d946a52785b901631e5, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 0
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -3131,11 +3131,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: a5ef33f2d7789da4786468b7bb2df1dd, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 0
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -3369,11 +3369,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: 1e2c3ac5092d4184088df75e094ca309, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 0
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -4293,7 +4293,7 @@ RectTransform:
   m_GameObject: {fileID: 5403776232212538712}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 7550024259065931222}
   m_RootOrder: 0
@@ -4324,12 +4324,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.8353392, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 75867e8448c9016468ceb784b93707d4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4741,13 +4741,24 @@ PrefabInstance:
     - target: {fileID: 2819875029809031943, guid: 9cc0a5878dd151c43a44411c676a09e7,
         type: 3}
       propertyPath: generateBeatEveryXSeconds
-      value: 4.6666665
+      value: 2.6251
       objectReference: {fileID: 0}
     - target: {fileID: 2819875029809031943, guid: 9cc0a5878dd151c43a44411c676a09e7,
         type: 3}
       propertyPath: myAudioOrigin
       value: 
       objectReference: {fileID: 905076187}
+    - target: {fileID: 2819875029809031943, guid: 9cc0a5878dd151c43a44411c676a09e7,
+        type: 3}
+      propertyPath: upSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2fcd7d11759d2344fbb4fd00817b6f09,
+        type: 3}
+    - target: {fileID: 2819875029809031943, guid: 9cc0a5878dd151c43a44411c676a09e7,
+        type: 3}
+      propertyPath: rhythmBeatsSpeed
+      value: 0.67
+      objectReference: {fileID: 0}
     - target: {fileID: 2819875029898266640, guid: 9cc0a5878dd151c43a44411c676a09e7,
         type: 3}
       propertyPath: m_Enabled
@@ -4958,13 +4969,24 @@ PrefabInstance:
     - target: {fileID: 2819875029809031943, guid: 9cc0a5878dd151c43a44411c676a09e7,
         type: 3}
       propertyPath: generateBeatEveryXSeconds
-      value: 4.6666665
+      value: 2.6251
       objectReference: {fileID: 0}
     - target: {fileID: 2819875029809031943, guid: 9cc0a5878dd151c43a44411c676a09e7,
         type: 3}
       propertyPath: myAudioOrigin
       value: 
       objectReference: {fileID: 1744975734}
+    - target: {fileID: 2819875029809031943, guid: 9cc0a5878dd151c43a44411c676a09e7,
+        type: 3}
+      propertyPath: upSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2fcd7d11759d2344fbb4fd00817b6f09,
+        type: 3}
+    - target: {fileID: 2819875029809031943, guid: 9cc0a5878dd151c43a44411c676a09e7,
+        type: 3}
+      propertyPath: rhythmBeatsSpeed
+      value: 0.67
+      objectReference: {fileID: 0}
     - target: {fileID: 2819875029898266640, guid: 9cc0a5878dd151c43a44411c676a09e7,
         type: 3}
       propertyPath: m_Enabled
@@ -5170,13 +5192,24 @@ PrefabInstance:
     - target: {fileID: 2819875029809031943, guid: 9cc0a5878dd151c43a44411c676a09e7,
         type: 3}
       propertyPath: generateBeatEveryXSeconds
-      value: 4.6666665
+      value: 2.6251
       objectReference: {fileID: 0}
     - target: {fileID: 2819875029809031943, guid: 9cc0a5878dd151c43a44411c676a09e7,
         type: 3}
       propertyPath: myAudioOrigin
       value: 
       objectReference: {fileID: 1907405067}
+    - target: {fileID: 2819875029809031943, guid: 9cc0a5878dd151c43a44411c676a09e7,
+        type: 3}
+      propertyPath: upSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2fcd7d11759d2344fbb4fd00817b6f09,
+        type: 3}
+    - target: {fileID: 2819875029809031943, guid: 9cc0a5878dd151c43a44411c676a09e7,
+        type: 3}
+      propertyPath: rhythmBeatsSpeed
+      value: 0.67
+      objectReference: {fileID: 0}
     - target: {fileID: 2819875029898266640, guid: 9cc0a5878dd151c43a44411c676a09e7,
         type: 3}
       propertyPath: m_Enabled
@@ -5382,13 +5415,24 @@ PrefabInstance:
     - target: {fileID: 2819875029809031943, guid: 9cc0a5878dd151c43a44411c676a09e7,
         type: 3}
       propertyPath: generateBeatEveryXSeconds
-      value: 4.6666665
+      value: 2.6251
       objectReference: {fileID: 0}
     - target: {fileID: 2819875029809031943, guid: 9cc0a5878dd151c43a44411c676a09e7,
         type: 3}
       propertyPath: myAudioOrigin
       value: 
       objectReference: {fileID: 1984405243}
+    - target: {fileID: 2819875029809031943, guid: 9cc0a5878dd151c43a44411c676a09e7,
+        type: 3}
+      propertyPath: upSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2fcd7d11759d2344fbb4fd00817b6f09,
+        type: 3}
+    - target: {fileID: 2819875029809031943, guid: 9cc0a5878dd151c43a44411c676a09e7,
+        type: 3}
+      propertyPath: rhythmBeatsSpeed
+      value: 0.67
+      objectReference: {fileID: 0}
     - target: {fileID: 2819875029898266640, guid: 9cc0a5878dd151c43a44411c676a09e7,
         type: 3}
       propertyPath: m_Enabled

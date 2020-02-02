@@ -65,10 +65,12 @@ public class QuestManager : MonoBehaviour
         rpgManager.monsterHealth = 0;
         rpgManager.monsterHealthMax = character.enemyHPMax * continueStacks;
         rhythmManager.startGenerationCoroutine();
+        /*
         pianoHandler.startGenerationCoroutine();
         drumHandler.startGenerationCoroutine();
         bassHandler.startGenerationCoroutine();
         trumpetHandler.startGenerationCoroutine();
+        */
         enemySpawnPosition.sprite = character.enemySprite;
         rpgManager.EnemyHealthSlider.maxValue = character.enemyHPMax;
         

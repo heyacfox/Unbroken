@@ -48,7 +48,7 @@ public class InstrumentRhythmHandler : MonoBehaviour
     private void Start()
     {
         instrumentRhythmBeats = new List<RhythmBeat>();
-        //StartCoroutine(generateBeatsInTime());
+        //startGenerationCoroutine();
     }
 
     public void startAudio()
@@ -56,22 +56,30 @@ public class InstrumentRhythmHandler : MonoBehaviour
         myAudioOrigin.volume = 0.5f;
     }
 
+    //I just literally cannot. Just manage this from title
+    /*
     IEnumerator generateBeatsInTime()
     {
+        /*
         while (true)
         {
             yield return new WaitForSeconds(generateBeatEveryXSeconds);
             if (numberofActivePlayers > 0)
             {
+                Debug.Log($"SubBeatGenerated at time[{Time.realtimeSinceStartup}]");
                 generateBeat();
             }
+            
         }
+        
     }
-
+    */
+    /*
     public void startGenerationCoroutine()
     {
         StartCoroutine(generateBeatsInTime());
     }
+    */
 
     public void gameWon()
     {
@@ -81,7 +89,7 @@ public class InstrumentRhythmHandler : MonoBehaviour
 
     public void gameLost()
     {
-        StopCoroutine(generateBeatsInTime());
+        //StopCoroutine(generateBeatsInTime());
         destroyAllBeatsOnScreen();
     }
 
@@ -222,7 +230,7 @@ public class InstrumentRhythmHandler : MonoBehaviour
 
     public void generateBeat()
     {
-        Debug.Log("Made a ins beat");
+        //Debug.Log("Made a ins beat");
         InputType chosenInput = (InputType)Random.Range(0, 4);
         
         Sprite spriteToUse = upSprite;
