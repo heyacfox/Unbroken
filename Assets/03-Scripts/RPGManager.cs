@@ -24,6 +24,8 @@ public class RPGManager : MonoBehaviour
 
     public GameObject healAnimationObject;
     public GameObject hitAnimationObject;
+
+    public Transform spawnhealanimposition;
     
 
     private void Start()
@@ -52,11 +54,11 @@ public class RPGManager : MonoBehaviour
 
     IEnumerator doPlayerIsHitEffects()
     {
-        /*
-        GameObject hitGenerated = Instantiate(hitAnimationObject, creaturePosition);
+        
+        GameObject hitGenerated = Instantiate(hitAnimationObject, mainCharacterPosition);
         float newScale = hitGenerated.transform.localScale.x + (increaseParticleSizePerBuffAmount * rhythmManager.getAllDebuffs());
         hitGenerated.transform.localScale = new Vector3(newScale, newScale, newScale);
-        */
+        
         yield return new WaitForSeconds(1f);
     }   
 
@@ -67,9 +69,9 @@ public class RPGManager : MonoBehaviour
         float newScale = particleGenerated.transform.localScale.x + (increaseParticleSizePerBuffAmount * rhythmManager.getAllBuffs());
         particleGenerated.transform.localScale = new Vector3(newScale, newScale, newScale);
         */
-        GameObject healGenerated = Instantiate(healAnimationObject, creaturePosition);
+        GameObject healGenerated = Instantiate(healAnimationObject, spawnhealanimposition);
         float newScale = healGenerated.transform.localScale.x + (increaseParticleSizePerBuffAmount * rhythmManager.getAllBuffs());
-        healGenerated.transform.position = new Vector3(healGenerated.transform.position.x, healGenerated.transform.position.x + 3f);
+        //healGenerated.transform.position = new Vector3(healGenerated.transform.position.x, healGenerated.transform.position.x + 3f);
         healGenerated.transform.localScale = new Vector3(newScale, newScale, newScale);
         
         yield return new WaitForSeconds(1f);
@@ -80,6 +82,7 @@ public class RPGManager : MonoBehaviour
         playerHealth = playerHealth - rhythmManager.getAllDebuffs() - 1;
         numberOfDebuffs = 0;
         PlayerHealthSlider.value = playerHealth;
+        StartCoroutine(doPlayerIsHitEffects());
         checkGameEndCondition();
     }
 
