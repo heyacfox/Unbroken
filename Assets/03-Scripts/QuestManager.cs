@@ -28,6 +28,7 @@ public class QuestManager : MonoBehaviour
 
     public Text winLoseNotif;
 
+    public AirConsoleHandler airConsoleHandler;
 
     private void Start()
     {
@@ -44,7 +45,7 @@ public class QuestManager : MonoBehaviour
         winLoseNotif.text = "Look at your phone to see which part you are, and get ready!";
         StartCoroutine(transitionToNextBattle());
         yield return new WaitForSeconds(timeToTransition);
-        
+        airConsoleHandler.FakeStart();
         winLoseNotif.gameObject.SetActive(false);
         
 

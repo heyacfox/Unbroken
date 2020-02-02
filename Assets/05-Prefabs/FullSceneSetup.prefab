@@ -186,7 +186,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 83.9, y: 369.8}
+  m_AnchoredPosition: {x: 83.8999, y: 369.8}
   m_SizeDelta: {x: 100, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &176798587
@@ -996,6 +996,7 @@ MonoBehaviour:
   timeToTransition: 5
   continueStacks: 0
   winLoseNotif: {fileID: 71796918}
+  airConsoleHandler: {fileID: 3457644965433872553}
 --- !u!1 &501474460
 GameObject:
   m_ObjectHideFlags: 0
@@ -5836,6 +5837,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6230880812806189913, guid: 842e85a595351744b845e6a0f04daefd,
+        type: 3}
+      propertyPath: browserStartMode
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6230880812806189918, guid: 842e85a595351744b845e6a0f04daefd,
         type: 3}

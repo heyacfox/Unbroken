@@ -4,6 +4,7 @@ using UnityEngine;
 using NDream.AirConsole;
 using Newtonsoft.Json.Linq;
 using UnityEngine.UI;
+using System;
 
 public enum PlayerAction {
   LEFT,
@@ -48,9 +49,9 @@ public class AirConsoleHandler : MonoBehaviour
         allHandlers.Add(trumpetHandler);
     }
 
-    private void Start()
+    public void FakeStart()
     {
-        /*
+        
         try
         {
             
@@ -60,11 +61,11 @@ public class AirConsoleHandler : MonoBehaviour
                     AddNewPlayer(deviceID);
                 }
             
-        } catch
+        } catch (Exception e)
         {
             Debug.Log("Air console wasn't ready, not calling initial setup");
         }
-        */
+        
     }
 
     public void onAction(int fromDeviceId, PlayerAction action) {
@@ -175,7 +176,7 @@ public class AirConsoleHandler : MonoBehaviour
             return PlayerType.TRUMPET;
         } else
         {
-            InstrumentRhythmHandler chosenhandler = allHandlers[Random.Range(0, 3)];
+            InstrumentRhythmHandler chosenhandler = allHandlers[UnityEngine.Random.Range(0, 4)];
             player.insRhythmHandler = chosenhandler;
             chosenhandler.numberofActivePlayers++;
             chosenhandler.numberOfPlayers.text = "Players: " + chosenhandler.numberofActivePlayers.ToString();

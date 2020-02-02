@@ -50,7 +50,7 @@ public class RhythmManager : MonoBehaviour
         {
             yield return new WaitForSeconds(generateBeatEveryXSeconds);
             generateBeat();
-            Debug.Log($"MainBeatGenerated at [{Time.realtimeSinceStartup}]");
+            //Debug.Log($"MainBeatGenerated at [{Time.realtimeSinceStartup}]");
             if (pianoRhythmHandler.numberofActivePlayers > 0)
             {
                 pianoRhythmHandler.generateBeat();
