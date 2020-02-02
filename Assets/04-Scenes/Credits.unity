@@ -573,7 +573,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 407, y: -94}
+  m_AnchoredPosition: {x: 407, y: -103}
   m_SizeDelta: {x: 591.8, y: 607}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1393766904
@@ -749,7 +749,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -74.9, y: -147}
+  m_AnchoredPosition: {x: -138, y: -147}
   m_SizeDelta: {x: 531.1, y: 640.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1413132098
@@ -786,7 +786,7 @@ MonoBehaviour:
   m_Text: 'Creative Director
 
 
-    Program Design
+    Programming/Design
 
 
     Programmer

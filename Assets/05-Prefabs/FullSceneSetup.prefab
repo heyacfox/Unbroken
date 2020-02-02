@@ -4035,7 +4035,7 @@ MonoBehaviour:
   mainCharacterPosition: {fileID: 501474462}
   healParticlePrefab: {fileID: 4508098338485911420, guid: fbb402c178869564e9611fd3656d376e,
     type: 3}
-  increaseParticleSizePerBuffAmount: 0.01
+  increaseParticleSizePerBuffAmount: 0.05
   healMonsterSound: {fileID: 691352177}
   healAnimationObject: {fileID: 6451565126878577172, guid: f2a5c6f2129439340bb66e17a36bb6c0,
     type: 3}
@@ -5334,6 +5334,16 @@ PrefabInstance:
       propertyPath: m_WasSpriteAssigned
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2819875030660543303, guid: 9cc0a5878dd151c43a44411c676a09e7,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2819875030660543303, guid: 9cc0a5878dd151c43a44411c676a09e7,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9cc0a5878dd151c43a44411c676a09e7, type: 3}
 --- !u!114 &639001663070687971 stripped
@@ -5627,6 +5637,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2819875030660543303, guid: 9cc0a5878dd151c43a44411c676a09e7,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2819875030660543303, guid: 9cc0a5878dd151c43a44411c676a09e7,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9cc0a5878dd151c43a44411c676a09e7, type: 3}
@@ -5922,6 +5942,16 @@ PrefabInstance:
       propertyPath: m_WasSpriteAssigned
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2819875030660543303, guid: 9cc0a5878dd151c43a44411c676a09e7,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2819875030660543303, guid: 9cc0a5878dd151c43a44411c676a09e7,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9cc0a5878dd151c43a44411c676a09e7, type: 3}
 --- !u!114 &639001664347642586 stripped
@@ -6007,7 +6037,7 @@ PrefabInstance:
     - target: {fileID: 6230880812806189913, guid: 842e85a595351744b845e6a0f04daefd,
         type: 3}
       propertyPath: browserStartMode
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6230880812806189918, guid: 842e85a595351744b845e6a0f04daefd,
         type: 3}
