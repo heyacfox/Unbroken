@@ -1814,6 +1814,30 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -268.8
       objectReference: {fileID: 0}
+    - target: {fileID: 978624336, guid: ecc1644056e26e14db27379b620847a7, type: 3}
+      propertyPath: beatDown
+      value: 
+      objectReference: {fileID: 21300000, guid: fbf59f51bb56c3542a36ba368142ea21,
+        type: 3}
+    - target: {fileID: 978624336, guid: ecc1644056e26e14db27379b620847a7, type: 3}
+      propertyPath: beatLeft
+      value: 
+      objectReference: {fileID: 21300000, guid: 44e574486504ec14aa32f62e06d26e5b,
+        type: 3}
+    - target: {fileID: 978624336, guid: ecc1644056e26e14db27379b620847a7, type: 3}
+      propertyPath: beatRight
+      value: 
+      objectReference: {fileID: 21300000, guid: 75867e8448c9016468ceb784b93707d4,
+        type: 3}
+    - target: {fileID: 978624336, guid: ecc1644056e26e14db27379b620847a7, type: 3}
+      propertyPath: beatUp
+      value: 
+      objectReference: {fileID: 21300000, guid: 2fcd7d11759d2344fbb4fd00817b6f09,
+        type: 3}
+    - target: {fileID: 978624336, guid: ecc1644056e26e14db27379b620847a7, type: 3}
+      propertyPath: generateBeatEveryXSeconds
+      value: 2.3333333
+      objectReference: {fileID: 0}
     - target: {fileID: 639001663070687968, guid: ecc1644056e26e14db27379b620847a7,
         type: 3}
       propertyPath: m_Color.r
@@ -1829,6 +1853,29 @@ PrefabInstance:
       propertyPath: m_Color.b
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 639001663070687971, guid: ecc1644056e26e14db27379b620847a7,
+        type: 3}
+      propertyPath: downSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: fbf59f51bb56c3542a36ba368142ea21,
+        type: 3}
+    - target: {fileID: 639001663070687971, guid: ecc1644056e26e14db27379b620847a7,
+        type: 3}
+      propertyPath: leftSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 44e574486504ec14aa32f62e06d26e5b,
+        type: 3}
+    - target: {fileID: 639001663070687971, guid: ecc1644056e26e14db27379b620847a7,
+        type: 3}
+      propertyPath: rightSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 75867e8448c9016468ceb784b93707d4,
+        type: 3}
+    - target: {fileID: 639001663070687971, guid: ecc1644056e26e14db27379b620847a7,
+        type: 3}
+      propertyPath: generateBeatEveryXSeconds
+      value: 4.6666665
+      objectReference: {fileID: 0}
     - target: {fileID: 639001664347642585, guid: ecc1644056e26e14db27379b620847a7,
         type: 3}
       propertyPath: m_Color.r
@@ -1843,6 +1890,52 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.b
       value: 0.6231971
+      objectReference: {fileID: 0}
+    - target: {fileID: 639001664347642586, guid: ecc1644056e26e14db27379b620847a7,
+        type: 3}
+      propertyPath: downSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: fbf59f51bb56c3542a36ba368142ea21,
+        type: 3}
+    - target: {fileID: 639001664347642586, guid: ecc1644056e26e14db27379b620847a7,
+        type: 3}
+      propertyPath: leftSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 44e574486504ec14aa32f62e06d26e5b,
+        type: 3}
+    - target: {fileID: 639001664347642586, guid: ecc1644056e26e14db27379b620847a7,
+        type: 3}
+      propertyPath: rightSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 75867e8448c9016468ceb784b93707d4,
+        type: 3}
+    - target: {fileID: 639001664347642586, guid: ecc1644056e26e14db27379b620847a7,
+        type: 3}
+      propertyPath: generateBeatEveryXSeconds
+      value: 4.6666665
+      objectReference: {fileID: 0}
+    - target: {fileID: 639001664891833016, guid: ecc1644056e26e14db27379b620847a7,
+        type: 3}
+      propertyPath: downSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: fbf59f51bb56c3542a36ba368142ea21,
+        type: 3}
+    - target: {fileID: 639001664891833016, guid: ecc1644056e26e14db27379b620847a7,
+        type: 3}
+      propertyPath: leftSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 44e574486504ec14aa32f62e06d26e5b,
+        type: 3}
+    - target: {fileID: 639001664891833016, guid: ecc1644056e26e14db27379b620847a7,
+        type: 3}
+      propertyPath: rightSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 75867e8448c9016468ceb784b93707d4,
+        type: 3}
+    - target: {fileID: 639001664891833016, guid: ecc1644056e26e14db27379b620847a7,
+        type: 3}
+      propertyPath: generateBeatEveryXSeconds
+      value: 4.6666665
       objectReference: {fileID: 0}
     - target: {fileID: 639001664891833019, guid: ecc1644056e26e14db27379b620847a7,
         type: 3}
@@ -1913,6 +2006,29 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.b
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3457644964991319106, guid: ecc1644056e26e14db27379b620847a7,
+        type: 3}
+      propertyPath: downSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: fbf59f51bb56c3542a36ba368142ea21,
+        type: 3}
+    - target: {fileID: 3457644964991319106, guid: ecc1644056e26e14db27379b620847a7,
+        type: 3}
+      propertyPath: leftSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 44e574486504ec14aa32f62e06d26e5b,
+        type: 3}
+    - target: {fileID: 3457644964991319106, guid: ecc1644056e26e14db27379b620847a7,
+        type: 3}
+      propertyPath: rightSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 75867e8448c9016468ceb784b93707d4,
+        type: 3}
+    - target: {fileID: 3457644964991319106, guid: ecc1644056e26e14db27379b620847a7,
+        type: 3}
+      propertyPath: generateBeatEveryXSeconds
+      value: 4.6666665
       objectReference: {fileID: 0}
     - target: {fileID: 3457644965591989744, guid: ecc1644056e26e14db27379b620847a7,
         type: 3}

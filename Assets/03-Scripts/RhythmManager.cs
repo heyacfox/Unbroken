@@ -90,7 +90,7 @@ public class RhythmManager : MonoBehaviour
     }
 
     private void destroyAllBeatsOnScreen()
-    {
+    { 
         foreach (Transform child in rhythmSpawnLocation.transform)
         {
             Destroy(child.gameObject);
@@ -199,10 +199,13 @@ public class RhythmManager : MonoBehaviour
     {
         generatedP1Beats.Remove(rhythmBeat);
         Destroy(rhythmBeat.gameObject);
+        RhythmBeat nextBeat = generatedP1Beats[0];
+        rhythmTarget.gameObject.GetComponent<SpriteRenderer>().sprite = nextBeat.GetComponent<SpriteRenderer>().sprite;
     }
 
     public void generateBeat()
     {
+        
         GameObject beatObject = Instantiate(beatPrefab, rhythmSpawnLocation);
         RhythmBeat rhythmBeat = beatObject.GetComponent<RhythmBeat>();
         InputType chosenInput = (InputType)Random.Range(0, 4);
@@ -225,6 +228,11 @@ public class RhythmManager : MonoBehaviour
 
         rhythmBeat.setupBeat(spriteToUse, rhythmBeatsSpeed, chosenInput, this);
         generatedP1Beats.Add(rhythmBeat);
+        if (rhythmTarget.gameObject.GetComponent<SpriteRenderer>().sprite == null)
+        {
+            RhythmBeat nextBeat = generatedP1Beats[0];
+            rhythmTarget.gameObject.GetComponent<SpriteRenderer>().sprite = nextBeat.GetComponent<SpriteRenderer>().sprite;
+        }
 
     }
 

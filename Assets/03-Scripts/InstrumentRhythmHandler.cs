@@ -54,7 +54,10 @@ public class InstrumentRhythmHandler : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(generateBeatEveryXSeconds);
-            generateBeat();
+            if (numberofActivePlayers > 0)
+            {
+                generateBeat();
+            }
         }
     }
 
@@ -195,6 +198,15 @@ public class InstrumentRhythmHandler : MonoBehaviour
     {
         instrumentRhythmBeats.Remove(rhythmBeat);
         Destroy(rhythmBeat.gameObject);
+        if (instrumentRhythmBeats.Count > 0)
+        {
+            RhythmBeat nextBeat = instrumentRhythmBeats[0];
+            rhythmTarget.gameObject.GetComponent<SpriteRenderer>().sprite = nextBeat.GetComponent<SpriteRenderer>().sprite;
+        } else
+        {
+            rhythmTarget.gameObject.GetComponent<SpriteRenderer>().sprite = null;
+        }
+        
     }
 
     public void generateBeat()
@@ -234,7 +246,12 @@ public class InstrumentRhythmHandler : MonoBehaviour
 
         rhythmBeat.setupBeatIns(spriteToUse, rhythmBeatsSpeed, chosenInput, this);
         instrumentRhythmBeats.Add(rhythmBeat);
-        
+        if (rhythmTarget.gameObject.GetComponent<SpriteRenderer>().sprite == null)
+        {
+            RhythmBeat nextBeat = instrumentRhythmBeats[0];
+            rhythmTarget.gameObject.GetComponent<SpriteRenderer>().sprite = nextBeat.GetComponent<SpriteRenderer>().sprite;
+        }
+
 
     }
 
