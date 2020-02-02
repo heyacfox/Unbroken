@@ -9,10 +9,14 @@
     width: 100%;
     height: 100%;
     position: absolute;
+    background: url(background.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
   }
   
   #info {
-    color: white;
+    color: black;
+    position: absolute;
   }
 
   .arrow_image {
@@ -101,6 +105,7 @@
           var hitText = document.getElementById("hitText");
           hitText.textContent = data.hit_rating;
           setTimeout(function() { hitText.textContent = ""; }, 500)
+          // myAudio.play();
         }
       };
 
@@ -147,10 +152,9 @@
     <br>
     <span id="hitText"></span>
   </div>
-<!-- <audio id="myAudio" controls>
-  <source src="horse.ogg" type="audio/ogg">
-    <source src="horse.mp3" type="audio/mpeg">
+  <!-- <audio id="myAudio">
+    <source src="drum.wav" type="audio/wav">
       Your browser does not support the audio element.
-</audio> -->
+  </audio> -->
 </body>
 </html>
