@@ -52,9 +52,11 @@ public class RPGManager : MonoBehaviour
 
     IEnumerator doPlayerIsHitEffects()
     {
+        /*
         GameObject hitGenerated = Instantiate(hitAnimationObject, creaturePosition);
         float newScale = hitGenerated.transform.localScale.x + (increaseParticleSizePerBuffAmount * rhythmManager.getAllDebuffs());
         hitGenerated.transform.localScale = new Vector3(newScale, newScale, newScale);
+        */
         yield return new WaitForSeconds(1f);
     }   
 
@@ -67,7 +69,9 @@ public class RPGManager : MonoBehaviour
         */
         GameObject healGenerated = Instantiate(healAnimationObject, creaturePosition);
         float newScale = healGenerated.transform.localScale.x + (increaseParticleSizePerBuffAmount * rhythmManager.getAllBuffs());
+        healGenerated.transform.position = new Vector3(healGenerated.transform.position.x, healGenerated.transform.position.x + 3f);
         healGenerated.transform.localScale = new Vector3(newScale, newScale, newScale);
+        
         yield return new WaitForSeconds(1f);
     }
 

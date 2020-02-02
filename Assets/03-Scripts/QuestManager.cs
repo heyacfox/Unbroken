@@ -87,8 +87,8 @@ public class QuestManager : MonoBehaviour
         trumpetHandler.startGenerationCoroutine();
         */
         enemySpawnPosition.sprite = character.enemySprite;
-        enemySpawnPosition.color = new Color(1, 1, 1, 0);
-        StartCoroutine(fadeInEnemySprite());
+        enemySpawnPosition.color = new Color(1, 1, 1, 1);
+        //StartCoroutine(fadeInEnemySprite());
         rpgManager.EnemyHealthSlider.maxValue = rpgManager.monsterHealthMax;
         rpgManager.EnemyHealthSlider.value = 0;
 
