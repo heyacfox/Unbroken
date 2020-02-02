@@ -47,7 +47,16 @@ public class AirConsoleHandler : MonoBehaviour
         allHandlers.Add(bassHandler);
         allHandlers.Add(trumpetHandler);
     }
-    
+
+    private void Start()
+    {
+        List<int> connectedDevices = AirConsole.instance.GetControllerDeviceIds();
+        foreach (int deviceID in connectedDevices)
+        {
+            AddNewPlayer(deviceID);
+        }
+    }
+
     public void onAction(int fromDeviceId, PlayerAction action) {
       Debug.Log($"Player {fromDeviceId} did action: {action}");
       // Add actions here

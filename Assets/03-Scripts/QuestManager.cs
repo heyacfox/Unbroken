@@ -31,10 +31,23 @@ public class QuestManager : MonoBehaviour
 
     private void Start()
     {
+        
+        StartCoroutine(initialSetupRoutine());
+    }
+
+    IEnumerator initialSetupRoutine()
+    {
         continueStacks = ContinueStacks.instance.currentStacks;
         rpgManager.PlayerHealthSlider.maxValue = rpgManager.playerHealthMax;
         rpgManager.PlayerHealthSlider.value = rpgManager.PlayerHealthSlider.maxValue;
+        winLoseNotif.gameObject.SetActive(true);
+        winLoseNotif.text = "Look at your phone to see which part you are, and get ready!";
         StartCoroutine(transitionToNextBattle());
+        yield return new WaitForSeconds(timeToTransition);
+        
+        winLoseNotif.gameObject.SetActive(false);
+        
+
     }
 
     IEnumerator transitionToNextBattle()

@@ -27,6 +27,7 @@ public class RPGManager : MonoBehaviour
     {
         playerHealth = playerHealthMax;
         monsterHealth = 0;
+        EnemyHealthSlider.value = monsterHealth;
     }
 
     
