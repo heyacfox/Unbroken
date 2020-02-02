@@ -83,6 +83,7 @@ public class RhythmManager : MonoBehaviour
         drumsRhythmHandler.gameWon();
         bassRhythmHandler.gameWon();
         trumpetRhythmHandler.gameWon();
+        rhythmTarget.gameObject.GetComponent<SpriteRenderer>().sprite = null;
     }
 
     public void gameLost()
@@ -93,6 +94,7 @@ public class RhythmManager : MonoBehaviour
         drumsRhythmHandler.gameLost();
         bassRhythmHandler.gameLost();
         trumpetRhythmHandler.gameLost();
+        rhythmTarget.gameObject.GetComponent<SpriteRenderer>().sprite = null;
     }
 
     public int getAllBuffs()
@@ -220,8 +222,11 @@ public class RhythmManager : MonoBehaviour
     {
         generatedP1Beats.Remove(rhythmBeat);
         Destroy(rhythmBeat.gameObject);
-        RhythmBeat nextBeat = generatedP1Beats[0];
-        rhythmTarget.gameObject.GetComponent<SpriteRenderer>().sprite = nextBeat.GetComponent<SpriteRenderer>().sprite;
+        if (generatedP1Beats.Count > 0)
+        {
+            RhythmBeat nextBeat = generatedP1Beats[0];
+            rhythmTarget.gameObject.GetComponent<SpriteRenderer>().sprite = nextBeat.GetComponent<SpriteRenderer>().sprite;
+        }
     }
 
     public void generateBeat()

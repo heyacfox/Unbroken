@@ -102,9 +102,23 @@ public class QuestManager : MonoBehaviour
             winLoseNotif.gameObject.SetActive(true);
             winLoseNotif.text = "You healed them! Get ready for the next monster!";
             currentBattleIndex++;
-            enemySpawnPosition.sprite = null;
+            //enemySpawnPosition.sprite = null;
+            StartCoroutine(fadeEnemySprite());
             StartCoroutine(transitionToNextBattle());
         } 
+    }
+    
+    IEnumerator fadeEnemySprite()
+    {
+        
+        for (float i = 1; i >= 0; i -= Time.deltaTime)
+        {
+            // set color with i as alpha
+            enemySpawnPosition.color = new Color(1, 1, 1, i);
+            yield return null;
+        }
+        enemySpawnPosition.sprite = null;
+        enemySpawnPosition.color = new Color(1, 1, 1, 1);
     }
 
 

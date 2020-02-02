@@ -85,12 +85,16 @@ public class InstrumentRhythmHandler : MonoBehaviour
     {
         StopAllCoroutines();
         destroyAllBeatsOnScreen();
+        this.battleBuffAccumulated = 0;
+        this.battleDebuffAccumulated = 0;
     }
 
     public void gameLost()
     {
         //StopCoroutine(generateBeatsInTime());
         destroyAllBeatsOnScreen();
+        this.battleBuffAccumulated = 0;
+        this.battleDebuffAccumulated = 0;
     }
 
     private void destroyAllBeatsOnScreen()
