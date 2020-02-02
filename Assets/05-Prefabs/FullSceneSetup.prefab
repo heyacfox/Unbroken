@@ -3874,7 +3874,7 @@ MonoBehaviour:
   creaturePosition: {fileID: 2126193025}
   healParticlePrefab: {fileID: 4508098338485911420, guid: fbb402c178869564e9611fd3656d376e,
     type: 3}
-  increaseParticleSizePerBuffAmount: 0.05
+  increaseParticleSizePerBuffAmount: 0.01
 --- !u!1 &3457644965367212330
 GameObject:
   m_ObjectHideFlags: 0

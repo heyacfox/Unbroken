@@ -50,11 +50,21 @@ public class AirConsoleHandler : MonoBehaviour
 
     private void Start()
     {
-        List<int> connectedDevices = AirConsole.instance.GetControllerDeviceIds();
-        foreach (int deviceID in connectedDevices)
+        /*
+        try
         {
-            AddNewPlayer(deviceID);
+            
+                List<int> connectedDevices = AirConsole.instance.GetControllerDeviceIds();
+                foreach (int deviceID in connectedDevices)
+                {
+                    AddNewPlayer(deviceID);
+                }
+            
+        } catch
+        {
+            Debug.Log("Air console wasn't ready, not calling initial setup");
         }
+        */
     }
 
     public void onAction(int fromDeviceId, PlayerAction action) {

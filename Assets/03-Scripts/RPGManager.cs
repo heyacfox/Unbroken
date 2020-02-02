@@ -18,7 +18,7 @@ public class RPGManager : MonoBehaviour
     public QuestManager questManager;
     public Transform creaturePosition;
     public GameObject healParticlePrefab;
-    public float increaseParticleSizePerBuffAmount = 0.05f;
+    public float increaseParticleSizePerBuffAmount = 0.001f;
     
 
     private void Start()
@@ -31,6 +31,7 @@ public class RPGManager : MonoBehaviour
         playerHealth = playerHealthMax;
         monsterHealth = 0;
         EnemyHealthSlider.value = monsterHealth;
+        StartCoroutine(doPlayerIsHitEffects());
     }
 
     
@@ -40,10 +41,21 @@ public class RPGManager : MonoBehaviour
         monsterHealth = monsterHealth + rhythmManager.getAllBuffs() + extraHeal;
         numberOfBuffs = 0;
         EnemyHealthSlider.value = monsterHealth;
+        StartCoroutine(doFriendIsHealedEffects());
+        checkGameEndCondition();
+    }
+
+    IEnumerator doPlayerIsHitEffects()
+    {
+        yield return new WaitForSeconds(1f);
+    }   
+
+    IEnumerator doFriendIsHealedEffects()
+    {
         GameObject particleGenerated = Instantiate(healParticlePrefab, creaturePosition);
         float newScale = particleGenerated.transform.localScale.x + (increaseParticleSizePerBuffAmount * rhythmManager.getAllBuffs());
-        particleGenerated.transform.localScale = new Vector2(newScale, newScale);
-        checkGameEndCondition();
+        particleGenerated.transform.localScale = new Vector3(newScale, newScale, newScale);
+        yield return new WaitForSeconds(1f);
     }
 
     public void playerMissOccurred()
