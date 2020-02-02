@@ -188,7 +188,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Exit
+  m_Text: Main menu
 --- !u!222 &745070080
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -945,7 +945,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 78.1, y: -398.3}
-  m_SizeDelta: {x: 208.2, y: 45.4}
+  m_SizeDelta: {x: 225.97, y: 51.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1701340462
 MonoBehaviour:

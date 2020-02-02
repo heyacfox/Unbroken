@@ -87,6 +87,7 @@ public class InstrumentRhythmHandler : MonoBehaviour
         destroyAllBeatsOnScreen();
         this.battleBuffAccumulated = 0;
         this.battleDebuffAccumulated = 0;
+        this.rhythmTarget.GetComponent<SpriteRenderer>().sprite = null;
     }
 
     public void gameLost()
@@ -95,6 +96,7 @@ public class InstrumentRhythmHandler : MonoBehaviour
         destroyAllBeatsOnScreen();
         this.battleBuffAccumulated = 0;
         this.battleDebuffAccumulated = 0;
+        this.rhythmTarget.GetComponent<SpriteRenderer>().sprite = null;
     }
 
     private void destroyAllBeatsOnScreen()
