@@ -151,6 +151,40 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 245589324, guid: ecc1644056e26e14db27379b620847a7, type: 3}
+      propertyPath: browserStartMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 639001663319966362, guid: ecc1644056e26e14db27379b620847a7,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 639001663319966362, guid: ecc1644056e26e14db27379b620847a7,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 639001663864296184, guid: ecc1644056e26e14db27379b620847a7,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 639001663864296184, guid: ecc1644056e26e14db27379b620847a7,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 639001664601672355, guid: ecc1644056e26e14db27379b620847a7,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 639001664601672355, guid: ecc1644056e26e14db27379b620847a7,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2176673396499104942, guid: ecc1644056e26e14db27379b620847a7,
         type: 3}
       propertyPath: m_AnchorMin.x

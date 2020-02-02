@@ -233,7 +233,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 85, y: -366.7}
-  m_SizeDelta: {x: 535.7, y: 61.6}
+  m_SizeDelta: {x: 535.7, y: 125.75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1068463838
 MonoBehaviour:
@@ -266,7 +266,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Thank You for playing our game!
+  m_Text: 'Thank You for playing our game!
+
+
+    Thanks to RTFX for visual effects'
 --- !u!222 &1068463839
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -610,7 +613,7 @@ MonoBehaviour:
     Nathan Hahn
 
 
-    Jimmy Sambou
+    Jimmy Sambuo
 
     Christopher  Hopkins
 
