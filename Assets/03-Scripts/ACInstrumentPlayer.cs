@@ -15,9 +15,14 @@ public class ACInstrumentPlayer : MonoBehaviour
     public InstrumentRhythmHandler insRhythmHandler;
     public bool holdFlag = false;
     public float waitingTimeToNextInput = 1f;
+    public string insRhythmName;
 
     public void ButtonInput(string input)
     {
+        if (insRhythmHandler == null)
+        {
+            insRhythmHandler = GameObject.Find(insRhythmName).GetComponent<InstrumentRhythmHandler>();
+        }
         if (holdFlag == false)
         {
             switch (input)

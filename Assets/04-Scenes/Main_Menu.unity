@@ -1054,7 +1054,7 @@ PrefabInstance:
     - target: {fileID: 6230880812806189913, guid: 842e85a595351744b845e6a0f04daefd,
         type: 3}
       propertyPath: browserStartMode
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6230880812806189918, guid: 842e85a595351744b845e6a0f04daefd,
         type: 3}

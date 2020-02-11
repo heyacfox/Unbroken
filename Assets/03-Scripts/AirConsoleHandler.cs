@@ -26,7 +26,7 @@ public enum PlayerType {
 public class AirConsoleHandler : MonoBehaviour
 {
 
-    public Dictionary<int, ACInstrumentPlayer> players = new Dictionary<int, ACInstrumentPlayer>();
+    public Dictionary<int, ACInstrumentPlayer> players;
     public MainPlayer mainPlayer;
     public int primaryDeviceID = -1;
     public GameObject acInstrumentPlayerPrefab;
@@ -47,6 +47,7 @@ public class AirConsoleHandler : MonoBehaviour
         allHandlers.Add(drumHandler);
         allHandlers.Add(bassHandler);
         allHandlers.Add(trumpetHandler);
+        players = new Dictionary<int, ACInstrumentPlayer>();
     }
 
     public void FakeStart()
@@ -63,10 +64,21 @@ public class AirConsoleHandler : MonoBehaviour
             
         } catch (Exception e)
         {
-            Debug.Log($"Air console wasn't ready, not calling initial setup [{e.StackTrace}]");
+            Debug.LogWarning($"Air console wasn't ready, not calling initial setup [{e.StackTrace}]");
             StartCoroutine(tryStartAgain());
         }
         
+    }
+    
+    public void Start()
+    {
+        foreach (int i in players.Keys)
+        {
+            if (players[i] == null)
+            {
+                AddNewPlayer(i);
+            }
+        }
     }
 
     IEnumerator tryStartAgain()
@@ -113,7 +125,21 @@ public class AirConsoleHandler : MonoBehaviour
         //When I get a message, I check if it's from any of the devices stored in my device Id dictionary
         if (players.ContainsKey(from) && data["action"] != null)
         {
+            Debug.Log($"Sending command to device [{from}], which the value in the dictionary is [{players[from]}], full dict is [{players.ToString()}]");
             //I forward the command to the relevant player script, assigned by device ID
+            //CHAOTIC NULL CHECK
+            if (players[from] == null)
+            {
+                ACInstrumentPlayer [] insPlayers = GameObject.FindObjectsOfType<ACInstrumentPlayer>();
+                foreach (ACInstrumentPlayer aci in insPlayers)
+                {
+                    if (aci.deviceTracker == from)
+                    {
+                        players[from] = aci;
+                        break;
+                    }
+                }
+            }
             players[from].ButtonInput(data["action"].ToString());
         }
     }
@@ -154,6 +180,7 @@ public class AirConsoleHandler : MonoBehaviour
         {
             player.insRhythmHandler = pianoHandler;
             pianoHandler.numberofActivePlayers++;
+            player.insRhythmName = pianoHandler.name;
             pianoHandler.numberOfPlayers.text = "Players: " + pianoHandler.numberofActivePlayers.ToString();
             pianoHandler.startAudio();
             Debug.Log("Added a pianist");
@@ -162,6 +189,7 @@ public class AirConsoleHandler : MonoBehaviour
         {
             player.insRhythmHandler = drumHandler;
             drumHandler.numberofActivePlayers++;
+            player.insRhythmName = drumHandler.name;
             drumHandler.numberOfPlayers.text = "Players: " + drumHandler.numberofActivePlayers.ToString();
             drumHandler.startAudio();
             Debug.Log("Added a drummer");
@@ -170,12 +198,14 @@ public class AirConsoleHandler : MonoBehaviour
         {
             player.insRhythmHandler = bassHandler;
             bassHandler.numberofActivePlayers++;
+            player.insRhythmName = bassHandler.name;
             bassHandler.numberOfPlayers.text = "Players: " + bassHandler.numberofActivePlayers.ToString();
             bassHandler.startAudio();
             Debug.Log("Added a bassist");
             return PlayerType.BASS;
         } else if (trumpetHandler.numberofActivePlayers == 0) {
             player.insRhythmHandler = trumpetHandler;
+            player.insRhythmName = trumpetHandler.name;
             trumpetHandler.numberofActivePlayers++;
             trumpetHandler.numberOfPlayers.text = "Players: " + trumpetHandler.numberofActivePlayers.ToString();
             trumpetHandler.startAudio();
@@ -185,8 +215,9 @@ public class AirConsoleHandler : MonoBehaviour
         {
             int pickedHandler = UnityEngine.Random.Range(0, 4);
             InstrumentRhythmHandler chosenhandler = allHandlers[pickedHandler];
+
+            player.insRhythmName = chosenhandler.name;
             
-            player.insRhythmHandler = chosenhandler;
             chosenhandler.numberofActivePlayers++;
             chosenhandler.numberOfPlayers.text = "Players: " + chosenhandler.numberofActivePlayers.ToString();
             Debug.Log("Added a player to a random handler");
